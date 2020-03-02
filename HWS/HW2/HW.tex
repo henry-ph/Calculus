@@ -1,0 +1,43 @@
+%!TEX program = pdflatex
+\documentclass[11pt, a4paper]{article}
+\usepackage{amsfonts, setspace, mathptmx}
+\renewcommand{\baselinestretch}{1.5}
+\begin{document}
+
+\title{Assignment 1}
+\author{Pan Hao}
+\date{}
+\maketitle
+\section*{Question 1} 
+\paragraph{i.}
+$S = \{x \in \mathbb{R} | x = \sqrt {2} + k, k \in \mathbb{N} \}$ 
+\paragraph{ii.}
+\textbf{proof:} For any arbitrary $k\in \mathbb{N}$, we define $S_k := (\sqrt{2} + k, \sqrt{2} + k + 1)$. \\ 
+According to the definition, $S_k \subset \mathbb{R} \setminus S$. For arbitrary $x \in S_k$, let $\delta = min\{x- \sqrt{2} - k, \sqrt{2} + k + 1 - x\}$, $\exists B(x, \delta)$ is an open ball, thus $S_k$ is an open set.
+Then the complement of $S$ in $\mathbb{R}$ $\overline{S} = \bigcup_{k \in \mathbb{N}} S_k$ is an open set. Therefore, $S$ is an closed set.
+\paragraph{iii.}
+\textbf{proof:} Since $\mathbb{N}$ is unbounded (according to the Archimedes character), $S$ is an unbounded set.
+\paragraph{iv.}
+$B((0, 0, 4), 1)$
+\paragraph{v.}
+\textbf{proof:} Obviously it is an open set since it is an oepn ball.
+\paragraph{vi.}
+$diam(B) = 2$.\\
+\textbf{proof:} For arbitrary points $\vec{p}, \vec{q} \in B(\vec{x}, 1), d(\vec{x}, \vec{p}) < 1, d(\vec{x}, \vec{q}) < 1$, thus $d(\vec{x}, \vec{y}) < 2$ according to the triangular inequality.
+Now consider two point sequences:
+$$A_k = \{ (0, 0, 3 + \frac{1}{2 ^ k}) | k \in \mathbb{N} \}, B_k = \{ (0, 0, 5 - \frac{1}{2 ^ k}) | k \in \mathbb{N} \}$$
+Obviously $A_k, B_k \subset B(\vec{x}, 1)$.
+Then we can tell
+$$\lim_{k \to \infty} d(A_k, B_k) = 2$$
+Which means $\forall \varepsilon > 0, \exists N > 0$, when $k > N, d(A_k, B_k) > 2 - \varepsilon$. Then we can tell $sup(\vec{p}, \vec{q}) = 2$, which means $diam(B) = 2$.
+
+\section*{Question 2}
+\paragraph{i.}
+$$\lim_{(x, y) \to (3.5)} (\frac{\sin (y - x)}{y - x}, \sqrt{y ^ 2 - x ^ 2})$$ exists  since when $(x, y) \to (3.5), y - x$ is nonzero. The limit is equal to $(\frac{\sin 2}{2}, 4)$
+\paragraph{ii.}
+$$\lim_{(x, y) \to (0, 0)} \frac{x ^ 4 - y ^ 3}{x ^ 3 - y ^ 4}$$ doesn't exist.
+\textbf{proof:} Replace $y$ with $kx (k \in \mathbb{R})$, then the original formula is equal to $$\lim_{x \to 0} \frac{x ^ 4 - k ^ 3 x ^ 3}{x ^ 3 - k ^ 4 x ^ 4}$$ = $$\lim_{x \to 0} \frac{x - k ^ 3}{1 - k ^ 4 x}$$ = $-k ^ 3$ which is uncertain. Therefore, the limit doesn't exist.
+\paragraph{iii.}
+$$\lim\limits_{^{x \to \infty}_{y \to \infty}} \frac{x ^ 3 - y ^ 3}{x ^ 4 - y ^ 4}$$ 
+
+\end{document}
