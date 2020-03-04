@@ -35,9 +35,14 @@ Which means $\forall \varepsilon > 0, \exists N > 0$, when $k > N, d(A_k, B_k) >
 \paragraph{i.}
 $$\lim_{(x, y) \to (3.5)} (\frac{\sin (y - x)}{y - x}, \sqrt{y ^ 2 - x ^ 2})$$ exists  since when $(x, y) \to (3.5), y - x$ is nonzero. The limit is equal to $(\frac{\sin 2}{2}, 4)$
 \paragraph{ii.}
-$$\lim_{(x, y) \to (0, 0)} \frac{x ^ 4 - y ^ 3}{x ^ 3 - y ^ 4}$$ doesn't exist.
+$$\lim_{(x, y) \to (0, 0)} \frac{x ^ 4 - y ^ 3}{x ^ 3 - y ^ 4}$$ doesn't exist. \\
 \textbf{proof:} Replace $y$ with $kx (k \in \mathbb{R})$, then the original formula is equal to $$\lim_{x \to 0} \frac{x ^ 4 - k ^ 3 x ^ 3}{x ^ 3 - k ^ 4 x ^ 4}$$ = $$\lim_{x \to 0} \frac{x - k ^ 3}{1 - k ^ 4 x}$$ = $-k ^ 3$ which is uncertain. Therefore, the limit doesn't exist.
 \paragraph{iii.}
-$$\lim\limits_{^{x \to \infty}_{y \to \infty}} \frac{x ^ 3 - y ^ 3}{x ^ 4 - y ^ 4}$$ 
+$$\lim\limits_{^{x \to \infty}_{y \to \infty}} \frac{x ^ 3 - y ^ 3}{x ^ 4 - y ^ 4}$$ exists. \\
+\textbf{proof:} Replace $y$ with $kx (k \in \mathbb{R})$, then the original formula is equal to 
+$$\lim_{x \to \infty} \frac{x ^ 3 - k ^ 3 x ^ 3}{x ^ 4 - k ^ 4 x ^ 4}$$ =
+$$\lim_{x \to \infty} \frac{1 - k ^ 3}{(1 - k ^ 4)x}$$ = 
+$0$ \\
+Therefore, the limit is equal to 0.
 
 \end{document}
