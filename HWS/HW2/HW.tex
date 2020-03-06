@@ -1,6 +1,6 @@
 %!TEX program = pdflatex
 \documentclass[11pt, a4paper]{article}
-\usepackage{amsfonts, setspace, mathptmx, bm}
+\usepackage{amsfonts, setspace, mathptmx, bm, amsmath}
 \renewcommand{\baselinestretch}{1.5}
 \begin{document}
 
@@ -46,24 +46,35 @@ $$\lim_{(x, y) \to (3.5)} (\frac{\sin (y - x)}{y - x}, \sqrt{y ^ 2 - x ^ 2})$$ e
 
 \paragraph{ii.}
 $$\lim_{(x, y) \to (0, 0)} \frac{x ^ 4 - y ^ 3}{x ^ 3 - y ^ 4}$$ doesn't exist. \\
-\textbf{Proof:} Replace $y$ with $kx (k \in \mathbb{R})$, then the original formula is equal to $$\lim_{x \to 0} \frac{x ^ 4 - k ^ 3 x ^ 3}{x ^ 3 - k ^ 4 x ^ 4}$$ = $$\lim_{x \to 0} \frac{x - k ^ 3}{1 - k ^ 4 x}$$ = $-k ^ 3$ which is uncertain. Therefore, the limit doesn't exist.
+\textbf{Proof:} Replace $y$ with $kx (k \in \mathbb{R})$, then the original formula is equal to 
+$$\begin{aligned}
+    \lim_{x \to 0} \frac{x ^ 4 - k ^ 3 x ^ 3}{x ^ 3 - k ^ 4 x ^ 4} &= \lim_{x \to 0} \frac{x - k ^ 3}{1 - k ^ 4 x} \\
+    &= -k ^ 3
+\end{aligned}$$ which is uncertain. Therefore, the limit doesn't exist.
 
 \paragraph{iii.}
 $$\lim\limits_{^{x \to +\infty}_{y \to +\infty}} \frac{x ^ 3 - y ^ 3}{x ^ 4 - y ^ 4}$$ exists. \\
 \textbf{Proof:} The original formula is equal to 
 $$\lim\limits_{^{x \to +\infty}_{y \to +\infty}} \frac{x ^ 2 + xy + y ^ 2}{x ^ 3 + x ^ 2 y + x y ^ 2 + y ^ 3}$$ which is obviously no less than zero. Then
-$$\lim\limits_{^{x \to +\infty}_{y \to +\infty}} \frac{x ^ 2 + xy + y ^ 2}{x ^ 3 + x ^ 2 y + x y ^ 2 + y ^ 3}$$ = 
-$$\lim\limits_{^{x \to +\infty}_{y \to +\infty}} \frac{x ^ 2 + xy + y ^ 2 + \frac{y ^ 3}{x} - \frac{y ^3}{x}}{x ^ 3 + x ^ 2 y + x y ^ 2 + y ^ 3}$$ = 
-$$\lim\limits_{^{x \to +\infty}_{y \to +\infty}} (\frac{1}{x} - \frac{y ^ 3}{x ^ 4 + x ^ 3 y + x ^ 2 y ^ 2 + x y ^ 3}) $$ $\leq $
-$$\lim_{x \to +\infty} \frac{1}{x} = 0$$
+$$\begin{aligned}
+\lim\limits_{^{x \to +\infty}_{y \to +\infty}} \frac{x ^ 2 + xy + y ^ 2}{x ^ 3 + x ^ 2 y + x y ^ 2 + y ^ 3} &= 
+\lim\limits_{^{x \to +\infty}_{y \to +\infty}} \frac{x ^ 2 + xy + y ^ 2 + \frac{y ^ 3}{x} - \frac{y ^3}{x}}{x ^ 3 + x ^ 2 y + x y ^ 2 + y ^ 3} \\
+&= 
+\lim\limits_{^{x \to +\infty}_{y \to +\infty}} (\frac{1}{x} - \frac{y ^ 3}{x ^ 4 + x ^ 3 y + x ^ 2 y ^ 2 + x y ^ 3}) \\
+&\leq 
+\lim_{x \to +\infty} \frac{1}{x} = 0
+\end{aligned}$$
 As a result, 
 $$0 \leq \lim\limits_{^{x \to +\infty}_{y \to +\infty}} \frac{x ^ 3 - y ^ 3}{x ^ 4 - y ^ 4} \leq 0$$
 Therefore, the limit is equal to 0.
 
 \paragraph{iv.}
 
-$$\lim_{x \to +\infty}\lim_{y \to -\infty} \frac{x ^ 3 - y ^ 3}{x ^ 4 - y ^ 4}$$
-
+$$\lim_{x \to +\infty}\lim_{y \to -\infty} \frac{x ^ 3 - y ^ 3}{x ^ 4 - y ^ 4}$$ exists. \\
+\textbf{Proof:} Replace $y$ with $u = \frac{1}{y}$, then
+$$\lim_{y \to -\infty} \frac{x ^ 3 - y ^ 3}{x ^ 4 - y ^ 4} = \lim_{u \to 0 ^ -} \frac{x ^ 3 - \frac{1}{u ^ 3}}{{x ^ 4 - \frac{1}{u ^ 4}}} = \lim_{u \to 0 ^ -} \frac{(u ^ 3 x ^ 3 - 1)u}{u ^ 4 x ^ 4 - 1} = 0$$
+Therefore,
+$$\lim_{x \to +\infty}\lim_{y \to -\infty} \frac{x ^ 3 - y ^ 3}{x ^ 4 - y ^ 4} = \lim_{x \to +\infty} 0 = 0$$
 
 \paragraph{v.}
 $$\lim_{(x, y) \to (\mathrm{e}, 0)}(1 + 2020y)^{\frac{1}{y - x ^ 2 y ^ 2}}$$ exists. \\
@@ -78,5 +89,79 @@ $$\lim_{(u, v) \to (\mathrm{e}, 2020)} \bm{g}(u, v) = \mathrm{e} ^ {2020}$$
 
 \paragraph{vi.}
 $$\lim_{(x, y) \to (3, +\infty)} \frac{\log(x + y)}{x ^ 2 + y ^ 2}$$ exists. \\
-\textbf{Proof:} 
+\textbf{Proof:} According to the fundemental inequality, $x ^ 2 + y ^ 2 \geq \frac{x ^ 2 + y ^ 2}{2}$, then
+$$\frac{\log(x + y)}{x ^ 2 + y ^ 2} \leq \frac{\log(x + y)}{\frac{(x + y) ^ 2}{2}}$$
+Replace $x ^ 2 + y ^ 2$ with $u$. When $(x ^ 2 + y ^ 2) \to (3, \infty), u \to \infty$. Then 
+$$\lim_{(x, y) \to (3, \infty)} \frac{\log(x + y)}{\frac{(x + y) ^ 2}{2}} = \lim_{u \to \infty} \frac{2\log u}{u ^ 2} = 0$$
+Meanwhile, the original formula is no less than zero, which means
+$$0 \leq \lim_{(x, y) \to (3, +\infty)} \frac{\log(x + y)}{x ^ 2 + y ^ 2} \leq 0$$
+Therefore, the limit is equal to 0.
+
+\section*{Question 3}
+
+\paragraph{i.}
+\textbf{Proof:} Denote $\vec{h}$ as $\begin{bmatrix}
+    h_x \\
+    h_y
+\end{bmatrix}$, $\vec{t}$ as
+$\begin{bmatrix}
+    x \\
+    y
+\end{bmatrix}$. 
+Take the linear function $\bm{L}(\vec{h})$ as $\begin{bmatrix}
+    2 & 0 \\
+    0 & 2 \\
+    2 & 1
+\end{bmatrix}
+\begin{bmatrix}
+    h_x \\
+    h_y \\
+\end{bmatrix}$. \\ 
+Consider
+$$\begin{aligned}
+    \bm{f}(\vec{t} + \vec{h}) - \bm{f}(\vec{t}) - \bm{L}(\vec{h}) &=
+    \begin{bmatrix}
+       2(x + h_x) + 3 - (2x + 3) - 2h_x \\
+       (x + h_x) ^ 2 + (y + h_y) ^ 2 - (x ^ 2 + y ^ 2) - 2h_y \\
+       (y + h_y)\mathrm{e} ^ {2(x + h_x)} - y\mathrm{e} ^ {2x} - (2h_x + h_y)
+    \end{bmatrix} \\
+    &=
+    \begin{bmatrix}
+        0 \\
+        h_x ^ 2 + 2h_x + h_y ^ 2 \\
+        y\mathrm{e} ^ {2x} (\mathrm{e} ^ {2h_x} - 1) + h_y(\mathrm{e} ^ {2(x + h_x)} - 1) - 2h_x
+    \end{bmatrix}
+\end{aligned}$$
+When $\vec{t} = (0, 1)$,
+$$\bm{f}(\vec{t} + \vec{h}) - \bm{f}(\vec{t}) - \bm{L}(\vec{h}) = 
+\begin{bmatrix}
+    0 \\
+    h_x ^ 2 + 2h_x + h_y ^ 2 \\
+    \mathrm{e} ^ {2h_x} - 1 + h_y(\mathrm{e} ^ {2h_x} - 1) - 2h_x
+\end{bmatrix}$$
+$$\lim_{\vec{h} \to 0} \frac{||\bm{f}(\vec{t} + \vec{h}) - \bm{f}(\vec{t}) - \bm{L}(\vec{h})||}{|| \vec{h} ||}$$
+=
+$$\lim_{\vec{h} \to 0} \sqrt{\frac{(h_x ^ 2 + 2h_x + h_y ^ 2) ^ 2 + (\mathrm{e} ^ {2h_x} - 1 + h_y(\mathrm{e} ^ {2h_x} - 1) - 2h_x) ^ 2}{h_x ^ 2 + h_y ^ 2}}$$
+=
+$$\lim_{\vec{h} \to 0} \sqrt{\frac{(h_x ^ 2 + 2h_x + h_y ^ 2) ^ 2 + (2h_x h_y) ^ 2}{h_x ^ 2 + h_y ^ 2}}$$
+=
+$$\lim_{\vec{h} \to 0} \sqrt{h_x ^ 2 + h_y ^ 2 + 4h_x + \frac{4h_x ^ 2(1 + h_y ^ 2)}{h_x ^ 2 + h_y ^ 2}} = 0$$
+Therefore, $\bm{f}$ is differentiable at $(0, 1)$.
+
+\paragraph{ii.}
+$$\begin{aligned}
+\frac{\partial{f_1}}{\partial{x}} &= 2,
+\frac{\partial{f_1}}{\partial{y}} = 0 \\
+\frac{\partial{f_2}}{\partial{x}} &= 2x,
+\frac{\partial{f_2}}{\partial{y}} = 2y \\
+\frac{\partial{f_3}}{\partial{x}} &= 2y\mathrm{e} ^ {2x},\frac{\partial{f_2}}{\partial{y}} = \mathrm{e} ^ {2x}
+\end{aligned}$$
+
+\paragraph{iii.}
+$$[\mathrm{d}\bm{f}|_{(0, 1)}] = 
+\begin{bmatrix}
+    2 & 0 \\
+    2x & 2y \\
+    2y\mathrm{e} ^ {2x} & \mathrm{e} ^ {2x}
+\end{bmatrix}$$
 \end{document}
