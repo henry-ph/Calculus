@@ -128,7 +128,7 @@ $$\begin{aligned}
     &=
     \begin{bmatrix}
         0 \\
-        h_x ^ 2 + 2h_x + h_y ^ 2 \\
+        h_x ^ 2 + 2xh_x + 2h_y(y - 1) + h_y ^ 2 \\
         y\mathrm{e} ^ {2x} (\mathrm{e} ^ {2h_x} - 1) + h_y(\mathrm{e} ^ {2(x + h_x)} - 1) - 2h_x
     \end{bmatrix}
 \end{aligned}$$
@@ -136,16 +136,16 @@ When $\vec{t} = (0, 1)$,
 $$\bm{f}(\vec{t} + \vec{h}) - \bm{f}(\vec{t}) - \bm{L}(\vec{h}) = 
 \begin{bmatrix}
     0 \\
-    h_x ^ 2 + 2h_x + h_y ^ 2 \\
+    h_x ^ 2 + 2xh_x + 2h_y(y - 1) + h_y ^ 2 \\
     \mathrm{e} ^ {2h_x} - 1 + h_y(\mathrm{e} ^ {2h_x} - 1) - 2h_x
 \end{bmatrix}$$
 $$\lim_{\vec{h} \to 0} \frac{||\bm{f}(\vec{t} + \vec{h}) - \bm{f}(\vec{t}) - \bm{L}(\vec{h})||}{|| \vec{h} ||}$$
 =
-$$\lim_{\vec{h} \to 0} \sqrt{\frac{(h_x ^ 2 + 2h_x + h_y ^ 2) ^ 2 + (\mathrm{e} ^ {2h_x} - 1 + h_y(\mathrm{e} ^ {2h_x} - 1) - 2h_x) ^ 2}{h_x ^ 2 + h_y ^ 2}}$$
+$$\lim_{\vec{h} \to 0} \sqrt{\frac{(h_x ^ 2 + 2xh_x + 2h_y(y - 1) + h_y ^ 2) ^ 2 + (\mathrm{e} ^ {2h_x} - 1 + h_y(\mathrm{e} ^ {2h_x} - 1) - 2h_x) ^ 2}{h_x ^ 2 + h_y ^ 2}}$$
 =
-$$\lim_{\vec{h} \to 0} \sqrt{\frac{(h_x ^ 2 + 2h_x + h_y ^ 2) ^ 2 + (2h_x h_y) ^ 2}{h_x ^ 2 + h_y ^ 2}}$$
+$$\lim_{\vec{h} \to 0} \sqrt{\frac{(h_x ^ 2 + h_y ^ 2) ^ 2 + (2h_x h_y) ^ 2}{h_x ^ 2 + h_y ^ 2}}$$
 =
-$$\lim_{\vec{h} \to 0} \sqrt{h_x ^ 2 + h_y ^ 2 + 4h_x + \frac{4h_x ^ 2(1 + h_y ^ 2)}{h_x ^ 2 + h_y ^ 2}} = 0$$
+$$\lim_{\vec{h} \to 0} \sqrt{h_x ^ 2 + h_y ^ 2 + \frac{4}{\frac{1}{h_y ^ 2} + \frac{1}{h_x ^ 2}}} = 0$$
 Therefore, $\bm{f}$ is differentiable at $(0, 1)$.
 
 \paragraph{ii.}
