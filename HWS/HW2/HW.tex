@@ -1,6 +1,6 @@
 %!TEX program = pdflatex
 \documentclass[11pt, a4paper]{article}
-\usepackage{amsfonts, setspace, mathptmx, bm, amsmath}
+\usepackage{amsfonts, setspace, mathptmx, bm, amsmath, color}
 \renewcommand{\baselinestretch}{1.5}
 \begin{document}
 
@@ -27,7 +27,10 @@ $B((0, 0, 4), 1)$
 \paragraph{v.}
 \textbf{Proof:} Obviously it is an open set since it is an oepn ball.
 
-\paragraph{vi.}
+{\color{red} \paragraph{vi.}
+\textbf{Proof:} $\forall \vec{x_1}, \vec{x_2} \in B(0, 0, 4), d(\vec{x_i}, (0, 0, 4)) < 1$. Therefore, according to triangular inequality, $d(\vec{x_1}, \vec{x_2}) \leq d(\vec{x_1}, (0, 0, 4)) + d(\vec{x_2}, (0, 0, 4)) < 2$. Thus, this open ball is bounded.}
+
+\paragraph{vii.}
 $diam(B) = 2$.\\
 \textbf{Proof:} For arbitrary points $\vec{p}, \vec{q} \in B(\vec{x}, 1), d(\vec{x}, \vec{p}) < 1, d(\vec{x}, \vec{q}) < 1$, thus $d(\vec{x}, \vec{y}) < 2$ according to the triangular inequality.
 Now consider two point sequences:
@@ -143,7 +146,7 @@ $$\lim_{\vec{h} \to 0} \frac{||\bm{f}(\vec{t} + \vec{h}) - \bm{f}(\vec{t}) - \bm
 =
 $$\lim_{\vec{h} \to 0} \sqrt{\frac{(h_x ^ 2 + 2xh_x + 2h_y(y - 1) + h_y ^ 2) ^ 2 + (\mathrm{e} ^ {2h_x} - 1 + h_y(\mathrm{e} ^ {2h_x} - 1) - 2h_x) ^ 2}{h_x ^ 2 + h_y ^ 2}}$$
 =
-$$\lim_{\vec{h} \to 0} \sqrt{\frac{(h_x ^ 2 + h_y ^ 2) ^ 2 + (2h_x h_y) ^ 2}{h_x ^ 2 + h_y ^ 2}}$$
+$$\lim_{\vec{h} \to 0} \sqrt{\frac{(h_x ^ 2 + h_y ^ 2) ^ 2 + (2h_x h_y) ^ 2}{h_x ^ 2 + h_y ^ 2}} {\color{red} (\vec{h} \to 0, 2h_x = \mathrm{e} ^ {2h_x} - 1 + o(2h_x))}$$
 =
 $$\lim_{\vec{h} \to 0} \sqrt{h_x ^ 2 + h_y ^ 2 + \frac{4}{\frac{1}{h_y ^ 2} + \frac{1}{h_x ^ 2}}} = 0$$
 Therefore, $\bm{f}$ is differentiable at $(0, 1)$.
