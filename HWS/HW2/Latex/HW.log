@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.1)  15 MAR 2020 22:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.1)  15 MAR 2020 22:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/admin/Desktop/MyStudy/Calculus/HWS/HW2/HW
-(c:/Users/admin/Desktop/MyStudy/Calculus/HWS/HW2/HW.tex
+**c:/Users/admin/Desktop/MyStudy/Calculus/HWS/HW2/Latex/HW
+(c:/Users/admin/Desktop/MyStudy/Calculus/HWS/HW2/Latex/HW.tex
 LaTeX2e <2018-12-01>
 (c:/texlive/2019/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
@@ -204,12 +204,12 @@ Overfull \hbox (14.6528pt too wide) in paragraph at lines 106--124
 [5] [6] (./HW.aux) ) 
 Here is how much of TeX's memory you used:
  1657 strings out of 492623
- 20522 string characters out of 6133291
+ 20540 string characters out of 6133291
  88629 words of memory out of 5000000
  5552 multiletter control sequences out of 15000+600000
  42025 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 27i,13n,25p,330b,199s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,13n,25p,336b,199s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
 Output written on HW.pdf (6 pages, 89003 bytes).
 PDF statistics:
