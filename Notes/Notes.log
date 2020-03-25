@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.1)  24 MAR 2020 19:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.1)  25 MAR 2020 22:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/admin/Desktop/MyStudy/Calculus/HWS/HW2/Latex/2019012632PanHao
-(c:/Users/admin/Desktop/MyStudy/Calculus/HWS/HW2/Latex/2019012632PanHao.tex
+**c:/Users/admin/Desktop/MyStudy/Calculus/Notes/Notes
+(c:/Users/admin/Desktop/MyStudy/Calculus/Notes/Notes.tex
 LaTeX2e <2018-12-01>
 (c:/texlive/2019/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
@@ -132,8 +132,24 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package color Info: Driver file: pdftex.def on input line 147.
  (c:/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
-)) (./2019012632PanHao.aux)
-\openout1 = `2019012632PanHao.aux'.
+)) (c:/texlive/2019/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+) (c:/texlive/2019/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2017/10/31 v2.20.4
+\thm@style=\toks20
+\thm@bodyfont=\toks21
+\thm@headfont=\toks22
+\thm@notefont=\toks23
+\thm@headpunct=\toks24
+\thm@preskip=\skip46
+\thm@postskip=\skip47
+\thm@headsep=\skip48
+\dth@everypar=\toks25
+) (c:/texlive/2019/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup8
+) (./Notes.aux)
+\openout1 = `Notes.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
@@ -157,35 +173,39 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 \scratchbox=\box29
 \nofMPsegments=\count101
 \nofMParguments=\count102
-\everyMPshowfont=\toks20
+\everyMPshowfont=\toks26
 \MPscratchCnt=\count103
 \MPscratchDim=\dimen113
 \MPnumerator=\count104
 \makeMPintoPDFobject=\count105
-\everyMPtoPDFconversion=\toks21
+\everyMPtoPDFconversion=\toks27
 )
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 9.
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 8.
  (c:/texlive/2019/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 9.
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 8.
  (c:/texlive/2019/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 9.
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 8.
  (c:/texlive/2019/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 9.
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 8.
  (c:/texlive/2019/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 8.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 8.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 8.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 8.
+ (c:/texlive/2019/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 10.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
@@ -194,27 +214,27 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 12.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 12.
+ [1
 
-Overfull \hbox (32.76111pt too wide) detected at line 15
-[][]
+{c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+Underfull \hbox (badness 10000) in paragraph at lines 40--46
+
  []
 
-[1
-
-{c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] (./2019012632PanHao.aux) ) 
+[3] [4] [5] (./Notes.aux) ) 
 Here is how much of TeX's memory you used:
- 1644 strings out of 492623
- 20593 string characters out of 6133291
- 89629 words of memory out of 5000000
- 5552 multiletter control sequences out of 15000+600000
- 36831 words of font info for 85 fonts, out of 8000000 for 9000
+ 1955 strings out of 492623
+ 23925 string characters out of 6133291
+ 87612 words of memory out of 5000000
+ 5842 multiletter control sequences out of 15000+600000
+ 40812 words of font info for 97 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 27i,10n,25p,308b,199s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on 2019012632PanHao.pdf (2 pages, 58148 bytes).
+ 27i,13n,25p,453b,208s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Notes.pdf (5 pages, 85958 bytes).
 PDF statistics:
- 40 PDF objects out of 1000 (max. 8388607)
- 28 compressed objects within 1 object stream
+ 61 PDF objects out of 1000 (max. 8388607)
+ 43 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

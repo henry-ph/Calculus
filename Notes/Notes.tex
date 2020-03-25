@@ -1,0 +1,80 @@
+%!TEX program = pdflatex
+\documentclass[11pt, a4paper]{article}
+\usepackage{amsfonts, setspace, mathptmx, bm, amsmath, color, amssymb, amsthm, mathrsfs}
+\renewcommand{\baselinestretch}{1.5}
+\begin{document}
+\title{Calculus Note}
+\author{Pan Hao, Henry}
+\maketitle
+
+    \section{Euclidean n-space}
+        \subsection{Concepts:}
+            $$\begin{aligned}
+                \mathbb{R}^n &:= \{(x_1, ..., x_n)|x_1, ..., x_n \in \mathbb{R}\} \\
+                A \times B &:= (a \in A, b \in B), \mathbb{R}^n := \mathbb{R} \times \mathbb{R} \times ... \times \mathbb{R} \\
+                ||\cdot|| &:= \mathbb{R}^n \rightarrow \mathbb{R} \text{ (Euclidean n-norm)} \\
+                ||\vec{x}|| &:= \sqrt{x_1^2 + x_2^2 + ... + x_n^2} \\
+                d &:= \mathbb{R}^n \times \mathbb{R}^n \rightarrow \mathbb{R} \text{ (Distance)} \\
+                d(\vec{x}, \vec{y}) &:= ||\vec{x} - \vec{y}|| = \sqrt{(x_1 - y_1)^2 + ... + (x_n - y_n)^2} \\
+                &\text{Properties of distance:} \\
+                \text{Symmetry:}& \forall \vec{x}, \vec{y} \in \mathbb{R}^n, d(\vec{x}, \vec{y}) = d(\vec{y}, \vec{x}) \\
+                \text{Triangle inequality:}& \forall \vec{x}, \vec{y}, \vec{z} \in \mathbb{R}^n, d(\vec{x}, \vec{y}) + d(\vec{y}, \vec{z}) \geq d(\vec{x}, \vec{z}) \\
+                \text{Positivity:}& \forall \vec{x}, \vec{y} \in \mathbb{R}^n, d(\vec{x}, \vec{y}) \geq 0 \\
+                \Rightarrow& \forall \vec{x}, \vec{y} \in \mathbb{R}^n, d(\vec{x}, \vec{y}) = 0 \Leftrightarrow \vec{x} = \vec{y}
+            \end{aligned}$$
+        \subsection{Open n-ball}
+            \subsubsection{Concept:} For $\delta > 0, B(\vec{x}, \delta) := \{\vec{y} \in \mathbb{R}^n | d(\vec{x}, \vec{y}) < \delta\}$
+            \subsubsection{Interior points:} $\vec{x} \in \mathbb{R}^n$ is an interior point of $S$ iff. $\exists \delta > 0 s.t. B(\vec{x}, \delta) \subset S$
+            \subsubsection{Exterior points:} $\vec{x} \in \mathbb{R}^n$ is an exterior point of $S$ iff. $\exists \delta > 0 s.t. B(\vec{x}, \delta) \subset \mathbb{R}^n \setminus S$
+            \subsubsection{Boundary points:} $\vec{x} \in \mathbb{R}^n$ is an boundary point of $S$ iff. $\forall \delta > 0, B(\vec{x}, \delta) \cap S \neq \varnothing \text{ and} B(\vec{x}, \delta) \cap (\mathbb{R}^n \setminus S) \neq \varnothing$
+            \subsubsection{Adherent points:} $\vec{x} \in \mathbb{R}^n$ is an adherent point of $S$ iff. $\forall \delta > 0, B(\vec{x}, \delta) \cap S \neq \varnothing$
+            \subsubsection{Limit points:} $\vec{x} \in \mathbb{R}^n$ is an limit point of $S$ iff. $\forall \delta > 0, (B(\vec{x}, \delta) \setminus \{\vec{x}\}) \cap S \neq \varnothing$
+        \subsection{Type of sets}
+        \subsubsection{Open sets:} A set S is open iff. every point of S is an interior point.
+        \subsubsection{Closed sets:} A set S is closed iff. $\mathbb{R}^n \setminus S$ is open.
+        \subsubsection{Interior of a set:} All interior points of S.
+        \subsubsection{Exterior of a set:} All exterior points of S.
+        \subsubsection{Boundary of a set} All boundary points of S $\rightarrow \partial S$
+        \subsubsection{Closure of a set:} $\bar{S} \text{ of } S \text{ is } S \cup \partial S$
+    \subsection{Theorem 1.1}
+    A set $S \subset \mathbb{R}^n$ is open iff. it is equal to the union of a collection of open balls. \\
+        \textbf{Proof: 1. $S$ = union of open balls $\Rightarrow S =$ open}  \\
+        Consider arbitrary $\vec{x} \in S$, then $\exists$ an open ball $B(\vec{y}, \delta_y) \subset S$ which contains $\vec{x}$. Let $\delta_{\vec{x}} := \delta_{\vec{y}} -d(\vec{x}, \vec{y}), \text{ then } \delta_{\vec{x}} > 0 \text{ and } B(\vec{x}, \delta-{\vec{x}}) \subset B(\vec{y}, \delta_{\vec{y}}) \subset S \\ \Rightarrow \vec{x} \text{ is an interior point of } S$. \\
+        Since $\vec{x}$ was arbitrary chosen, every point of $S$ is an interior point. Therefore, $S$ is open. \\
+        \textbf{2. $S =$ open $\Rightarrow S =$ union of open balls} \\
+        Assume $S$ is open, $\Rightarrow \forall \vec{x} \in S, \exists \delta_{\vec{x}} > 0 s.t. B(\vec{x}, \delta_{\vec{x}}) \subset S$ \\
+        $$U := \bigcup\limits_{\vec{x} \in \mathrm{Int}(S)} B(\vec{x}, \delta_{\vec{x}}) \subset S$$ \\
+        Conversely, $S \subset U \Rightarrow S = U$
+        Therefore, S is the union of open balls.
+    \subsection{Theorem 1.2}
+    $\text{Int}(S)$ of any set $S \subset \mathbb{R}^n$ is an open set. Likewise, $\text{Ext}(S) \text{ of } S$ is also open. \\
+        \textbf{Proof:} Every $\vec{x} \in \text{Int}(S)$ is an interior point of $S \\ \Rightarrow \exists \delta_{\vec{x}} > 0, s.t. B(\vec{x}, \delta_{\vec{x}}) \subset S \\
+        \Rightarrow U := \bigcup\limits_{\vec{x} \in \mathrm{Int}(S)} B(\vec{x}, \delta_{\vec{x}})$ is open. \\
+        Thus, $\text{Int}(S) \subset U$, because every $\vec{x} \in \text{Int}(S)$ is contained in some open ball \\ $B(\vec{x}, \delta_{\vec{x}}) \subset U$. For every $\vec{x} \in \text{Int}(S), B(\vec{x}, \delta_{\vec{x}}) \subset \text{Int}(S)$. \\
+        Since $B(\vec{x}, \delta_{\vec{x}})$ is open, every point in $B(\vec{x}, \delta_{\vec{x}})$ is an interior point of $B(\vec{x}, \delta_{\vec{x}}) \Rightarrow$ is an interior point of $S \supset B(\vec{x}, \delta_{\vec{x}})$.
+    \subsection{Proposition 1.3}
+    The union of any collection of (arbitrarily many) open sets is open.
+    \subsection{Proposition 1.4}
+    Finite intersections of open sets is open.
+    \subsection{Theorem 1.5}
+    Finite unions of closed sets is closed, and intersections of closed sets is closed.
+\section{Further properties}
+    \subsection{Proposition 2.1}
+    Finite intersections of open sets is open.
+    \subsection{Theorem 2.2}
+    Finite unions of closed set is closed, and intersections of closed set is closed. \\
+        \textbf{Proof:} 
+        $$\begin{aligned}
+            &\mathbb{R}^n \setminus (\bigcup\limits_{\alpha \in \mathscr{A}} S_\alpha) = \bigcup\limits_{\alpha \in \mathscr{A}} (\mathbb{R}^n \setminus S_\alpha) \\
+            \Rightarrow& \vec{x} \in \mathbb{R}^n \setminus (\bigcup\limits_{\alpha \in \mathscr{A}} S_\alpha) \\
+            \Leftrightarrow& \vec{x} \notin \bigcup\limits_{\alpha \in \mathscr{A}} S_\alpha \\
+            \Leftrightarrow& \forall \alpha \in \mathscr{A}, \vec{x} \notin S_\alpha \\
+            \Leftrightarrow& \forall \alpha \in \mathscr{A}, \vec{x} \in \bigcap\limits_{\alpha \in \mathscr{A}} (\mathbb{R}^N \setminus S_\alpha)
+        \end{aligned}$$
+    \subsection{Connectedness}
+        \subsubsection{Path-connectedness:}
+            $\forall \vec{x}, \vec{y} \in S, \exists$ a continuous function $f: [0, 1] \to S, s.t. f(0) = \vec{x} \text{ and } f(1) = \vec{y}$
+        \subsubsection{Connectedness:}
+        $S \subset \mathbb{R}, s.t. \exists \text{ open sets } U, V \subset \mathbb{R}^n, s.t. U \cap V = \varnothing, U, V \neq \varnothing \\
+        S \subset U \cup V$ and $S \cap V$ and $S \cup V$ are both non-empty.         
+\end{document}
