@@ -23,7 +23,7 @@
                 \Rightarrow& \forall \vec{x}, \vec{y} \in \mathbb{R}^n, d(\vec{x}, \vec{y}) = 0 \Leftrightarrow \vec{x} = \vec{y}
             \end{aligned}$$
         \subsection{Open n-ball}
-            \subsubsection{Concept:} For $\delta > 0, B(\vec{x}, \delta) := \{\vec{y} \in \mathbb{R}^n | d(\vec{x}, \vec{y}) < \delta\}$
+            \subsubsection{Definition:} For $\delta > 0, B(\vec{x}, \delta) := \{\vec{y} \in \mathbb{R}^n | d(\vec{x}, \vec{y}) < \delta\}$
             \subsubsection{Interior points:} $\vec{x} \in \mathbb{R}^n$ is an interior point of $S$ iff. $\exists \delta > 0 s.t. B(\vec{x}, \delta) \subset S$
             \subsubsection{Exterior points:} $\vec{x} \in \mathbb{R}^n$ is an exterior point of $S$ iff. $\exists \delta > 0 s.t. B(\vec{x}, \delta) \subset \mathbb{R}^n \setminus S$
             \subsubsection{Boundary points:} $\vec{x} \in \mathbb{R}^n$ is an boundary point of $S$ iff. $\forall \delta > 0, B(\vec{x}, \delta) \cap S \neq \varnothing \text{ and} B(\vec{x}, \delta) \cap (\mathbb{R}^n \setminus S) \neq \varnothing$
@@ -76,5 +76,110 @@
             $\forall \vec{x}, \vec{y} \in S, \exists$ a continuous function $f: [0, 1] \to S, s.t. f(0) = \vec{x} \text{ and } f(1) = \vec{y}$
         \subsubsection{Connectedness:}
         $S \subset \mathbb{R}, s.t. \exists \text{ open sets } U, V \subset \mathbb{R}^n, s.t. U \cap V = \varnothing, U, V \neq \varnothing \\
-        S \subset U \cup V$ and $S \cap V$ and $S \cup V$ are both non-empty.         
+        S \subset U \cup V$ and $S \cap V$ and $S \cup V$ are both non-empty.
+    \subsection{Convergence}
+        \subsubsection{Definition}
+            Let $\{\vec{x_k}\}_{k \in \mathbb{N}} = {\vec{x_1}, \vec{x_2}, ...}$ be a sequence in $\mathbb{R}^n$, we say that this sequence converges to $\vec{a} \in \mathbb{R}^n$ iff. $\forall \varepsilon > 0, \exists N \in \mathbb{N}, s.t. \forall k > N, ||\vec{x_k} - \vec{a}|| < \varepsilon \\
+            \Rightarrow \lim\limits_{k \to \infty} \vec{x_k} = \vec{a} \Leftrightarrow d(\vec{x_k}, \vec{a}) = 0$
+        \subsubsection{Cauchy convergent sequences}
+        A sequence $\{\vec{x_k}\} \text{ in } \mathbb{R}^n$ is called Cauchy convergent iff. $\forall \varepsilon > 0, \exists N, s.t. \forall j, k > N, d(\vec{x}, \vec{k}) < \varepsilon$
+    \subsection{Theorem 2.4}
+    Let $\{\vec{x_k}\}$ be a sequence in $\mathbb{R}^n$, we adopt the following notion: 
+    $$\vec{x_k} = (x_{k, 1}, x_{k, 2}, ..., x_{k_n})$$
+    Then $\lim\limits_{k \to \infty} \vec{x_k} = \vec{a} \Leftrightarrow \forall j = 1, ..., n, \lim\limits_{k \to \infty} x_{k, j} = a_j$ \textbf{Similar to Cauchy convergence} \\
+    \textbf{N.B.} In $\mathbb{R}^n$, Cauchy convergent \textbf{doesn't mean} convergent in $S$ ($\partial S$).
+    \subsection{Lemma 2.5}
+        $S \subset \mathbb{R}^n, \vec{a} \in \mathbb{R}^n, \vec{a} \text{ is adherent point of } S \Leftrightarrow \{\vec{x_k}\} \text{ in } S \text{ converge to } \vec{a}$
+    \subsection{Lemma 2.6}
+        $\vec{a}$ is a limit point $\Leftrightarrow \{\vec{x_k}\} \text{ in } S \setminus \{\vec{a} \}$ converges to $\vec{a}$
+    \subsection{Theorem 2.7}
+    $S \subset \mathbb{R}^n \text{ is closed} \Leftrightarrow S$ contains all of its adherent points.
+    \subsection{Diameter of a set}
+        \subsubsection{Definition}
+        $diam(S) := \sup\limits_{\vec{x}, \vec{y} \in S} d(\vec{x}, \vec{y}) \to R \in (0, +\infty) \cup \{+\infty\}$
+        \subsubsection{Bounded sets and sequences}
+        $diam(S) < \infty$
+    \subsection{Cantor's intersection theorem}
+    $\{F_k \}_{k \in \mathbb{N}}$ of non-empty, closed \textit{(without this is not true)} subsets of $\mathbb{R}^n$ nested in the following way:
+    $$\mathbb{R}^n \supset F_1 \supset F_2 \supset ... \supset F_k \supset ...$$
+    If $\lim\limits_{k \to \infty} diam(F_k) = 0$, then the $\bigcup\limits_{k = 1}^{\infty} F_k$ is a set consisting a single element. 
+\section{Vector function}
+    \subsection{Function}
+    $f$ is a subset of $A \times B:$
+    $$\forall a \in A, \exists! b \in B, s.t. (a, b) \in f \Leftrightarrow f(a) = b$$
+    \subsection{Scalar and vector valued functions}
+        \subsubsection{Definition}
+        $f: \Omega_1 \to \Omega_2$ between a set $\Omega_1 \subset \mathbb{R}^n \text{ and } \Omega_2 \subset \mathbb{R}^m$ is called an \textbf{n-variable, m-dimensioned vector valued} function. Especially when $m = 1$, it is a scalar function.
+        \subsubsection{Algebraic constructions}
+        $$\begin{aligned}
+            &\text{For } \Omega \subset \mathbb{R}^n, \mu: \Omega \to \mathbb{R}, \bm{f}, \bm{g}: \Omega \to \mathbb{R}^n: \\
+            &\mu\bm{f}: \Omega \to \mathbb{R}^n, \vec{x} \mapsto \mu(\vec{x})\bm{f}(\vec{x}) \\
+            &\bm{f} + \bm{g}: \Omega \to \mathbb{R}^n, \vec{x} \mapsto \bm{f}(\vec{x}) + \bm{g}(\vec{x})
+        \end{aligned}$$
+        \subsubsection{Composition}
+        $$\begin{aligned}
+            &\bm{f}: \Omega_1 \subset \mathbb{R}^n \to \Omega_2 \subset \mathbb{R}^m, \bm{g}: \Omega_2 \to \mathbb{R}^l := \\
+            &\bm{g} \circ \bm{f}: \Omega_1 \to \mathbb{R}^l, \vec{x} \mapsto \bm{g}(\bm{f}(\vec{x})) \\
+            &\text{Practically requires } \bm{f}(\Omega_1) = {\bm{f}(\vec{x}) | \vec{x} \in \Omega_1} \text{ is a subset of the domain of } \bm{g}
+        \end{aligned}$$
+    \subsection{Taking limits}
+    Let $\Omega \subset \mathbb{R}^n$ be non-empty. Given a function $\bm{f}: \Omega \to \mathbb{R}^n$, a limit point $\vec{x_0}$ of $\Omega$ and $\vec{a} \in \mathbb{R}^m$. If
+    $$\begin{aligned}
+        &\forall \varepsilon > 0, \exists \delta > 0, s.t. \forall \vec{x} \in \Omega \\
+        &0 < ||\vec{x} - \vec{x_0}||_n < \delta \Rightarrow ||\bm{f}(\vec{x}) - \vec{a}||_m < \varepsilon \\
+        &\Leftrightarrow \vec{x} \in B(\vec{x_0}, \delta) \setminus \{\vec{x_0} \} \Rightarrow \bm{f}(\vec{x}) \in B(\vec{a}, \varepsilon)
+        \Rightarrow \vec{x} \text{ limits to } \vec{x_0} \text{ in } \Omega. \bm{f}(\vec{x}) \text{ limits to } \vec{a}: \\
+        &\lim\limits_{\Omega \ni \vec{x} \to \vec{x_0}} \bm{f}(\vec{x}) = \vec{a} \\
+    \end{aligned}$$
+    When limit point $\vec{x_0}$ is an interior point of $\Omega \cup \{\vec{x_0} \}$, then we can denote
+    $$\lim\limits_{\vec{x} \to \vec{x_0}} \bm{f}(\vec{x})$$
+    Coordinate-wise denotation:
+    $$\lim\limits_{\Omega \ni \vec{x} \to \vec{x_0}} \bm{f}(\vec{x}) = \vec{a} \Leftrightarrow \text{For }j = 1, ..., m, \lim\limits_{\Omega \ni \vec{x} \to \vec{x_0}} f_j(\vec{x}) = a_j, \bm{f}(\vec{x}) = (f_1{\vec{x}, ..., f_n(\vec{x})})$$
+    \subsection{Scalar function properties}
+        \subsubsection{Inequality}
+        If $\forall \vec{x} \in \Omega \setminus \{\vec{x_0} \}, f(\vec{x}) \leq g(\vec{x})$, then
+        $$\lim\limits_{\Omega \ni \vec{x} \to \vec{x_0}} f(\vec{x}) \leq \lim\limits_{\Omega \ni \vec{x} \to \vec{x_0}} g(\vec{x})$$
+        \subsubsection{Non-negativity and Sandwich Theorem}
+        \subsubsection{Calculation}
+        If $\lim\limits_{\Omega \ni \vec{x} \to \vec{x_0}} \mu(\vec{x}), \bm{f}(\vec{x}), \bm{g}(\vec{x})$ all exist, then
+        $$\begin{aligned}
+            \lim\limits_{\Omega \ni \vec{x} \to \vec{x_0}} (\mu\bm{f})(\vec{x}) &= \lim\limits_{\Omega \ni \vec{x} \to \vec{x_0}} \mu(\vec{x}) \cdot \bm{f}(\vec{x}) \\
+            \lim\limits_{\Omega \ni \vec{x} \to \vec{x_0}}(\bm{f} + \bm{g})(\vec{x}) &= \lim\limits_{\Omega \ni \vec{x} \to \vec{x_0}}\bm{f}(\vec{x}) + \lim\limits_{\Omega \ni \vec{x} \to \vec{x_0}}\bm{g}{\vec{x}} \\
+            \lim\limits_{\Omega \ni \vec{x} \to \vec{x_0}}\frac{1}{\mu(\vec{x})} &= \frac{1}{\lim\limits_{\Omega \ni \vec{x} \to \vec{x_0}}\mu(\vec{x})} (\mu \neq 0)
+        \end{aligned}$$
+    \subsection{Uniqueness}
+    If a limit exists, then it must be unique. \\
+        \textbf{Proof:} Given $\lim\limits_{\Omega \ni \vec{x} \to \vec{x_0}} \bm{f}(\vec{x}) = \vec{a}, \vec{b}$,
+        $$\begin{aligned}
+            &\Rightarrow \text{A sequence } \{\vec{x_k}\}_{k \in \mathbb{N}} \text{ has its tail } \to \vec{a}, \vec{b} \\
+            &\Rightarrow \vec{a}, \vec{b} \text{ are arbitrary close \textit{(via triangle inequality)}} \\
+            &\Rightarrow \vec{a} = \vec{b}
+        \end{aligned}$$
+    \subsection{Iterated limits / Repeated limits}
+    Taking limits of a function one variable at a time.
+    $$\lim_{x \to x_0}\lim_{y \to y_0} f(x, y)$$
+    1. Compute $\lim\limits_{y \to y_0} f(x, y)$ for all $x$ in a small punctured ball $B(x_0, \delta) \setminus \{x_0\}$ around $x_0$ \\
+    2. This produces a function $\varphi(x) := \lim\limits_{x \to x_0} f(x, y)$ on $B(x_0, \delta) \setminus \{x_0 \} \Rightarrow \lim\limits_{x \to x_0} \varphi(x)$
+    $$\Rightarrow \lim_{x \to x_0}\lim_{y \to y_0} f(x, y) = \lim\limits_{x \to x_0} \varphi(x) = \lim_{(x, y) \to (x_0, y_0)} f(x, y)$$
+    If $$\lim_{x \to x_0}\lim_{y \to y_0} f(x, y) \neq \lim_{y \to y_0}\lim_{x \to x_0} f(x, y)$$
+    then $\lim_{(x, y) \to (x_0, y_0)} f(x, y)$ doesn't exist. \\
+    \textbf{Conclusion:} Iterated limits $\nLeftrightarrow$ double limits
+\section{Continuity}
+    \subsection{Continuity}
+        \subsubsection{Definition}
+        $$\begin{aligned}
+            \bm{f}: \Omega \subset \mathbb{R}^n \to \mathbb{R}^m, \vec{x_0} \in \Omega, \bm{f} \text{ is continuous at } \vec{x_0} &\Leftrightarrow \\
+            \forall \varepsilon > 0, \exists \delta > 0, s.t. \forall \vec{x} \in \Omega, ||\vec{x} - \vec{x_0}|| < \delta &\Rightarrow ||\bm{f}(\vec{x}) - \bm{f}(\vec{x_0})|| < \varepsilon \\
+            (\vec{x} \in B(\vec{x_0}, \delta) \cap \Omega &\Rightarrow \bm{f}(\vec{x}) \in B(\bm{f}(\vec{x_0}), \varepsilon))
+        \end{aligned}$$
+        If $\vec{x_0} \in \Omega$ is isolated, then $\bm{f}$ is always continuous at $\vec{x_0}$. \\
+        if $\vec{x_0} \in \Omega$ is a limit point ,then Continuity at $\vec{x_0}$ is equal to the following limit being true: $\lim\limits_{\Omega \ni \vec{x} \to \vec{x_0}}\bm{f}(\vec{x}) = \bm{f}(\vec{x_0})$
+        \subsubsection{Continuous function}
+        $\bm{f}: \Omega \to \mathbb{R}^m$ is continuous at every $\vec{x} \in \Omega := C^0$ \\
+        Scalar function: $C^0(\Omega) := C^0(\Omega; \mathbb{R})$ \\
+        $\bm{f}(\vec{x})$ is continuous $\Leftrightarrow f_1(\vec{x}), f_2(\vec{x}), ..., f_m(\vec{x})$ are continuous.
+    \subsection{Theorem 4.1}
+    Given continuous functions $\bm{f}: \Omega_1 \subset \mathbb{R}^n \to \mathbb{R}^m, \bm{g}: \Omega_2 \subset \mathbb{R}^m \to \mathbb{R}^l$ \\
+    such that $\bm{f}(\Omega_1) \subset \Omega_2$, then the function $\bm{g} \circ \bm{f}: \Omega_1 \to \mathbb{R}^l$ is continuous.
+    
 \end{document}
