@@ -40,7 +40,197 @@ $$\begin{aligned}
 \end{aligned}$$
 
 \section*{Question 2}
+\paragraph{i.} \textbf{Proof:}
+$$\nabla F = 
+\begin{bmatrix}
+    -2\mathrm{e}^{2z}x \\
+    3y^2 \\
+    8 - 2\mathrm{e}^{2z}x^2
+\end{bmatrix}$$
+Suppose that $\nabla F$ would vanish, then $x, y \equiv 0$. Consider $Z(F) = \{(x, y, z) | -x^2\mathrm{e}^{2z} + y^3 + 8z = 0\}$. For a point on $Z(F)$, if $x = y = 0$, then $z = 0$. However, $\nabla F$ at point $(0, 0, 0) = 8$ doesn't vanish. Therefore, $\nabla F$ never vanishes on $Z(F)$.
+\paragraph{ii.}
+Denote an arbitrary vector $\vec{x} = [x, y, z]^T$, $\vec{p} = [a, b, c]^T \in Z(F)$. At point $\vec{p}$, the normal vector of tangent plane of $Z(F)$ is $\nabla F|_{\vec{p}} = 
+\begin{bmatrix}
+    -2\mathrm{e}^{2c}a \\
+    3b^2 \\
+    8 - 2\mathrm{e}^{2c}a^2
+\end{bmatrix}$. \\
+Therefore, the point-normal form for the tangent plane is
+$$(\vec{x} - \vec{p}) \cdot 
+\begin{bmatrix}
+    -2\mathrm{e}^{2c}a \\
+    3b^2 \\
+    8 - 2\mathrm{e}^{2c}a^2
+\end{bmatrix} = 0$$
+\paragraph{iii.}
+Take two non-zero vectors which are orthonormal to $\nabla F|_{\vec{p}}$:
+$$\vec{u} = 
+\begin{bmatrix}
+    -\frac{1}{2\mathrm{e}^{2c}a} \\
+    \frac{1}{3b^2} \\
+    0
+\end{bmatrix}, \vec{v} = 
+\begin{bmatrix}
+    0 \\
+    \frac{1}{3b^2} \\
+    \frac{1}{8 - 2\mathrm{e}^{2c}a^2}
+\end{bmatrix}$$
+Then the parametric form for the tangent place is
+$$\{\vec{x} = \vec{p} + s\vec{u} + t\vec{v} | s, t \in \mathbb{R}\}$$
+\paragraph{iv.} 
+\textbf{Proof:}
+$$[\mathrm{d}\bm{F}] = 
+\begin{bmatrix}
+    -2\mathrm{e}^{2z}x & 3y^2 & 8 - 2\mathrm{e}^{2z}x^2
+\end{bmatrix}$$
+When $x \neq \pm 2\mathrm{e}^{-z}, 2\mathrm{e}^{2z}x^2 \neq 0$. According to the implicit function theorem, $\forall \vec{p} \in Z(F), \exists C^1$ map $\bm{\zeta}: B([a, b]^T, \delta) \to \mathbb{R}$ satisfying $F(x, y, \zeta(x, y)) = 0$.
+$$\begin{aligned}
+    \begin{bmatrix}
+        \mathrm{d}\bm{\zeta}
+    \end{bmatrix} &= -
+    \begin{bmatrix}
+        8 - 2\mathrm{e}^{2c}a^2
+    \end{bmatrix}^{-1} \cdot 
+    \begin{bmatrix}
+        -2\mathrm{e}^{2c}a & 3b^2
+    \end{bmatrix} \\
+    &=
+    \begin{bmatrix}
+        \frac{\mathrm{e}^{2c}a}{4 - \mathrm{e}^{2c}a^2} & -\frac{3b^2}{8 - 2\mathrm{e}^{2c}a^2}
+    \end{bmatrix}
+\end{aligned}$$
+\paragraph{v.}
+\textbf{Proof:}
+Consider $G(y, z, x) = -x^2\mathrm{e}^{2z} + y^3 + 8z$, then $F(x, y, z) = G(y, z, x)$
+$$[\mathrm{d}\bm{G}] = 
+\begin{bmatrix}
+    3y^2 & 8 - 2\mathrm{e}^{2z}x^2 & -2\mathrm{e}^{2z}x
+\end{bmatrix}$$
+When $x \neq 0, -2\mathrm{e}^{2z}x \neq 0$. According to the implicit function theorem, $\forall \vec{p} \in Z(F), \exists C^1$ map $\bm{\xi}: B([b, c]^T, \delta) \to \mathbb{R}$ satisfying $G(z, y, \xi(y, z)) = F(\xi(y, z), y, z) = 0$.
+$$\begin{aligned}
+    \begin{bmatrix}
+        \mathrm{d}\bm{\xi}
+    \end{bmatrix} &= -
+    \begin{bmatrix}
+        -2\mathrm{e}^{2c}a
+    \end{bmatrix}^{-1} \cdot 
+    \begin{bmatrix}
+        3b^2 & 8 - 2\mathrm{e}^{2c}a
+    \end{bmatrix} \\
+    &=
+    \begin{bmatrix}
+        \frac{3b^2}{2\mathrm{e}^{2c}a} & \frac{8 - 2\mathrm{e}^{2c}a^2}{2\mathrm{e}^{2c}a}
+    \end{bmatrix}
+\end{aligned}$$
+\paragraph{vi.}
+\textbf{Proof:}
+At point $[0, -2, 1]^T$, according to \textbf{iv.},
+$$\begin{bmatrix}
+    \mathrm{d}\bm{\zeta}|_{[0, -2, 1]^T}
+\end{bmatrix} = 
+\begin{bmatrix}
+    0 & -\frac{3}{2}
+\end{bmatrix}$$
+Thus,
+$$\begin{aligned}
+    \begin{bmatrix}
+        \mathrm{d}\bm{g}
+    \end{bmatrix} &=
+    \begin{bmatrix}
+        1 + \partial_x\bm{\zeta} & \partial_y\bm{\zeta} \\
+        0 & 1
+    \end{bmatrix} \\
+    &=
+    \begin{bmatrix}
+        1 & -\frac{3}{2} \\
+        0 & 1
+    \end{bmatrix}
+\end{aligned}$$
+Its columns are independent, so the matrix is invertible. According to the inverse function theorem, $\exists \bm{f}: B([1, -2]^T, \varepsilon) \to f(B([1, -2]^T, \varepsilon))$ which is inverse to $\bm{g}: f(B([1, -2]^T, \varepsilon)) \to B([1, -2]^T, \varepsilon)$.
+$$\begin{aligned}
+    \begin{bmatrix}
+        \mathrm{d}\bm{f}
+    \end{bmatrix} &=
+    \begin{bmatrix}
+        \mathrm{d}\bm{g}
+    \end{bmatrix}^{-1} \\
+    &=
+    \begin{bmatrix}
+        1 & -\frac{3}{2} \\
+        0 & 1
+    \end{bmatrix}^{-1} \\
+    &=
+    \begin{bmatrix}
+        1 & \frac{3}{2} \\
+        0 & 1
+    \end{bmatrix}
+\end{aligned}$$
 
-
-
+\section{Question 3}
+$$f(x, y, z) = (x + y - 1)^2 + (x - y + 2)^2 + 2z^2 + \frac{1}{6}
+z^3$$
+\paragraph{i.}
+$$\begin{aligned}
+    \begin{bmatrix}
+        \mathrm{d}\bm{f}
+    \end{bmatrix} &= 
+    \begin{bmatrix}
+        2(x + y - 1) + 2(x - y + 2) & 2(x + y - 1) - 2(x - y + 2) & 4z + \frac{1}{2}z^2
+    \end{bmatrix} \\
+    &=
+    \begin{bmatrix}
+        4x + 2 & 4y - 6 & 4z +\frac{1}{2}z^2
+    \end{bmatrix}
+\end{aligned}$$
+In $B(\vec{0}, 10)$, let $[\mathrm{d}\bm{f}] = \vec{0}$, we get stationary points $\vec{u} = [-\frac{1}{2}, \frac{3}{2}, 0]^T$, $\vec{v} = [-\frac{1}{2}, \frac{3}{2}, -8]^T$.
+\paragraph{ii.}
+$$H_{\bm{f}} =
+\begin{bmatrix}
+    4 & 0 & 0 \\
+    0 & 4 & 0 \\
+    0 & 0 & 4 + z
+\end{bmatrix}$$
+Consider two stationary points $\vec{u}, \vec{v}$:
+$$H_{\bm{f}}(\vec{u}) =
+\begin{bmatrix}
+    4 & 0 & 0 \\
+    0 & 4 & 0 \\
+    0 & 0 & 4
+\end{bmatrix} = 4I$$
+Thus the Hessian at this point is positive definite and therefore is a local minimum.
+$$H_{\bm{f}}(\vec{v}) =
+\begin{bmatrix}
+    4 & 0 & 0 \\
+    0 & 4 & 0 \\
+    0 & 0 & -4
+\end{bmatrix}$$
+For this diagonal matrix, its eigenvalues are $\lambda_1 = \lambda_2 = 4 > 0, \lambda_3 = -4 < 0$. Thus the Hessian at this point is not positive
+semi-definite and therefore is not a local extrema.
+\paragraph{iii.}
+Denote $\varphi(x, y, z) = x^2 + y^2 + z^2 - 100 = 0$. Consider:
+$$\begin{aligned}
+    F(x, y, z, \lambda) &= f(x, y, z) + \lambda\varphi(x, y, z) \\
+    &= (x + y - 1)^2 + (x - y + 2)^2 + 2z^2 + \frac{1}{6}z^3 + \lambda(x^2 + y^2 + z^2 - 100) \\
+    \Rightarrow \partial_x\bm{F} &= 4x + 2 + 2\lambda x = 0 \\
+    \partial_y\bm{F} &= 4y - b + 2\lambda y = 0 \\
+    \partial_z\bm{F} &= 4z + \frac{1}{2}z^2 + 2\lambda z = 0 \\
+    \Rightarrow \lambda &= -\frac{2x + 1}{x} \\
+    \lambda &= \frac{3 - 2y}{y} \\
+    \lambda &= \frac{4z + \frac{1}{2}z^2}{2z} \\
+    \Rightarrow
+    &\left\{
+        \begin{aligned}
+            y &= -3x \\
+            z &= \frac{4}{x}
+        \end{aligned} 
+    \right.
+\end{aligned}$$
+Take $y = -3x, z = \frac{4}{x}$ into $x^2 + y^2 + z^2 = 100$:
+$$\begin{aligned}
+    x^2 + (-3x)^2 + (\frac{4}{x})^2 &= 100 \\
+    \Leftrightarrow 5x^4 -50x^2 + 8 &= 0 \\
+    \Rightarrow x^2_1 = \frac{25 + 3\sqrt{65}}{5}, x^2_2 &= \frac{25 - 3\sqrt{65}}{5} \\
+    \Rightarrow x_1 = \sqrt{\frac{25 + 3\sqrt{65}}{5}} > 1, x_2 &= -\sqrt{\frac{25 + 3\sqrt{65}}{5}} < -1 \\
+    x_3 = \sqrt{\frac{25 - 3\sqrt{65}}{5}} < 1, x_4 &= -\sqrt{\frac{25 - 3\sqrt{65}}{5}} > -1
+\end{aligned}$$
 \end{document}
