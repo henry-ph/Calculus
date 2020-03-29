@@ -119,7 +119,7 @@ $$\begin{aligned}
     \end{bmatrix} \\
     &=
     \begin{bmatrix}
-        \frac{3b^2}{2\mathrm{e}^{2c}a} & \frac{8 - 2\mathrm{e}^{2c}a^2}{2\mathrm{e}^{2c}a}
+        \frac{3b^2}{2\mathrm{e}^{2c}a} & \frac{4 - \mathrm{e}^{2c}a^2}{\mathrm{e}^{2c}a}
     \end{bmatrix}
 \end{aligned}$$
 \paragraph{vi.}
@@ -212,11 +212,11 @@ $$\begin{aligned}
     F(x, y, z, \lambda) &= f(x, y, z) + \lambda\varphi(x, y, z) \\
     &= (x + y - 1)^2 + (x - y + 2)^2 + 2z^2 + \frac{1}{6}z^3 + \lambda(x^2 + y^2 + z^2 - 100) \\
     \Rightarrow \partial_x\bm{F} &= 4x + 2 + 2\lambda x = 0 \\
-    \partial_y\bm{F} &= 4y - b + 2\lambda y = 0 \\
+    \partial_y\bm{F} &= 4y - 6 + 2\lambda y = 0 \\
     \partial_z\bm{F} &= 4z + \frac{1}{2}z^2 + 2\lambda z = 0 \\
     \Rightarrow \lambda &= -\frac{2x + 1}{x} \\
     \lambda &= \frac{3 - 2y}{y} \\
-    \lambda &= \frac{4z + \frac{1}{2}z^2}{2z} \\
+    \lambda &= \frac{4z + \frac{1}{2}z^2}{2z} (z \neq 0)\\
     \Rightarrow
     &\left\{
         \begin{aligned}
@@ -230,7 +230,37 @@ $$\begin{aligned}
     x^2 + (-3x)^2 + (\frac{4}{x})^2 &= 100 \\
     \Leftrightarrow 5x^4 -50x^2 + 8 &= 0 \\
     \Rightarrow x^2_1 = \frac{25 + 3\sqrt{65}}{5}, x^2_2 &= \frac{25 - 3\sqrt{65}}{5} \\
-    \Rightarrow x_1 = \sqrt{\frac{25 + 3\sqrt{65}}{5}} > 1, x_2 &= -\sqrt{\frac{25 + 3\sqrt{65}}{5}} < -1 \\
-    x_3 = \sqrt{\frac{25 - 3\sqrt{65}}{5}} < 1, x_4 &= -\sqrt{\frac{25 - 3\sqrt{65}}{5}} > -1
+    \Rightarrow x_1 = \sqrt{\frac{25 + 3\sqrt{65}}{5}}, x_2 &= -\sqrt{\frac{25 + 3\sqrt{65}}{5}} \\
+    x_3 = \sqrt{\frac{25 - 3\sqrt{65}}{5}}, x_4 &= -\sqrt{\frac{25 - 3\sqrt{65}}{5}}
 \end{aligned}$$
+if $z = 0$, take $y = -3x$ into $x^2 + y^2 + z^2 = 100$:
+$$\begin{aligned}
+    10x^2 &= 100 \\
+    \Rightarrow x_5 = \sqrt{10}, x_6 &= -\sqrt{10}
+\end{aligned}$$
+\paragraph{iv.}
+$$\bm{g}: \mathbb{R} \times (0, +\infty) \times [0, \frac{\pi}{2}) \to \mathbb{R}$$
+$$g(u, v, w) = u^6 + u^3 + (\log v)^2 - 3\log v + \tan^2 w + \frac{1}{12}\tan^3 w$$
+Obviously, $\bm{g}$ goes to infinity when $u, v, w$ go to their boundaries. Thus, the minima would only occur at the stationary point.
+$$\begin{aligned}
+    \begin{bmatrix}
+        \mathrm{d}\bm{g}
+    \end{bmatrix} &=
+    \begin{bmatrix}
+        6u^5 + 3u^2 & \frac{2\log v - 3}{v} & 2\sec^2 w\tan w + \frac{1}{4}\sec^2 w\tan^2 w
+    \end{bmatrix} \\
+    &\text{Let } [\mathrm{d}\bm{g}] = 0 \\
+    &\Rightarrow 3u^2(2u^3 + 1) = 0 \\
+    &\frac{2\log v - 3}{v} = 0 \\
+    &2\sec^2 w\tan w + \frac{1}{4}\sec^2 w\tan^2 w = 0 \\
+\end{aligned}$$
+$$\begin{aligned}
+    \Rightarrow u_1 = 0, u_2 &= (-\frac{1}{2})^{\frac{1}{3}} \\
+    v &= \mathrm{e}^{\frac{3}{2}} \\
+    w &= 0 \\
+    g(0, \mathrm{e}^{\frac{3}{2}}, 0) &= -\frac{9}{4} \\
+    g((-\frac{1}{2})^{\frac{1}{3}}, \mathrm{e}^{\frac{3}{2}}, 0) &= -\frac{9}{4} \\
+    \Rightarrow g(0, \mathrm{e}^{\frac{3}{2}}, 0) = g(0, \mathrm{e}^{\frac{3}{2}}, 0) &= -\frac{9}{4}
+\end{aligned}$$
+Therefore, there are two minima for this function $[0, \mathrm{e}^{\frac{3}{2}}, 0]^T, [(-\frac{1}{2})^{\frac{1}{3}}, \mathrm{e}^{\frac{3}{2}}, 0]^T$
 \end{document}
