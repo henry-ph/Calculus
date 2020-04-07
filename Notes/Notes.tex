@@ -181,5 +181,61 @@
     \subsection{Theorem 4.1}
     Given continuous functions $\bm{f}: \Omega_1 \subset \mathbb{R}^n \to \mathbb{R}^m, \bm{g}: \Omega_2 \subset \mathbb{R}^m \to \mathbb{R}^l$ \\
     such that $\bm{f}(\Omega_1) \subset \Omega_2$, then the function $\bm{g} \circ \bm{f}: \Omega_1 \to \mathbb{R}^l$ is continuous.
-    
+    \subsection{Theorem 4.2}
+    Given a function $\bm{f}: \Omega \to \mathbb{R}^m$, where $\Omega$ is an open set. Then $\bm{f}$ is continuous iff. for every open set $U \subset \mathbb{R}^m$, the preimage set: $\bm{f}^{-1}(U) := \{\vec{x} \in \Omega | \bm{f}(\vec{x} \in U)\}$ is open. \\
+    If $\Omega$ isn't open, then $\bm{f}$ is open iff. for all open sets $U \subset \mathbb{R}^m$, the preimage set $\bm{f}^{-1}(U)$ is the intersection of $\Omega$ with an open set in $\mathbb{R}^n \supset \Omega$
+    \subsection{Extreme value theorem}
+    Given closed, bounded set $\Omega \subset \mathbb{R}^n$, continuous scalar function $f \in C^0(\Omega)$, then $f$ attains its maximum/minimum on $\Omega$: \\
+    $\Rightarrow$ There exists $m, M > 0$ s.t. $\forall \vec{x} \in \mathbb{R}^n$,
+    $$m\sum\limits_{j = 1}^n|x_j| \leq ||\vec{x}|| \leq M\sum\limits_{j = 1}^n|x_j|$$
+    \subsection{Differentiability}
+    $\bm{f}: \Omega \subset \mathbb{R}^n \to \mathbb{R}^m$ is differentiable at an interior point $\vec{x} \in \Omega$ iff. there exists $\mathbb{L}: \mathbb{R}^n \to \mathbb{R}^m$ s.t.
+    $$\lim\limits_{\vec{h} \to 0} \frac{||\bm{f}(\vec{x} + \vec{h}) - \bm{f}(\vec{x}) - \mathbb{L}(\vec{h})||_m}{||\vec{h}||_n} = 0$$
+   We denote $\mathbb{L}$ by $\mathrm{d}\bm{f}|_{\vec{x}}$ or $\mathrm{d}\bm{f}(\vec{x})$, it is the derivative of $\bm{f}$ at $\vec{x}$. When $\Omega$ is open, $\bm{f}$ is differentiable iff. $\bm{f}$ is differentiable of every $\vec{x} \in \Omega$. \\
+   \textbf{Differentiability implies continuity}
+   \subsection{Theorem 4.3} 
+   If $\bm{f}: \Omega \to \mathbb{R}^m$ is differentiable at $\vec{x}$, then the derivative $\mathrm{d}\bm{f}|_{\vec{x}}$ at $\vec{x}$ is unique.
+   \subsection{Partially differentiate functions}
+   $$\frac{\partial f_i}{\partial x_j}(\vec{t}) := \frac{\partial f_i}{\partial x_j}|_{\vec{t}} := \lim\limits_{h \to 0}\frac{f_i(t_1, ..., t_{j - 1}, t_j + h, t_{j + 1}, ..., t_n) - f_i(\vec{t})}{h}$$
+   \subsubsection{Matrix expression for the total derivative}
+   $$\begin{aligned}
+       \begin{bmatrix}
+           \mathrm{d}\bm{f}|_{\vec{t}}
+       \end{bmatrix} = 
+       \begin{bmatrix}
+           \frac{\partial f_1}{\partial x_1}|_{\vec{t}} & \ldots & \frac{\partial f_1}{\partial x_n}|_{\vec{t}} \\
+           \vdots & & \vdots \\
+           \frac{\partial f_m}{\partial x_1}|_{\vec{t}} & \ldots & \frac{\partial f_m}{\partial x_n}|_{\vec{t}}
+       \end{bmatrix}
+   \end{aligned}$$
+   \textbf{Jacobian} of $\bm{f}$ of $\vec{t}$
+   \subsubsection{Little o notation}
+   Given scalar functions $f, g: \Omega \to \mathbb{R}$, if
+   $$\lim\limits_{\Omega \ni \vec{x} \to \vec{x_0}} \frac{|\bm{f}(\vec{x})|}{|\bm{g}(\vec{x})|} = 0$$
+   We can write:
+   $$||\bm{g}(\vec{h})|| = o(||\vec{h}||) (\vec{h} \to \vec{0})$$
+   \subsubsection{Big O notation}
+   Given scalar functions $f, g: \Omega \to \mathbb{R}$, $\exists C, \delta > 0$,
+   $$\forall \vec{x} \in B(\vec{x_0}, \delta) \setminus \{\vec{x_0}\} \cap \Omega, |\bm{f}(\vec{x})| \leq C|\bm{g}(\vec{x})|$$
+   We can write:
+   $$\bm{f}(\vec{x}) = O(\bm{g}(\vec{x}))$$
+\section{Differentiability}
+   \subsection{Derivatives as linear functions}
+   $\mathrm{d}\bm{f}|_{\vec{x}}: \mathbb{R}^n \to \mathbb{R}^m$ is a linear function: \\
+   For scalar functions:
+   $$\mathrm{d}f|_{\vec{t}} = \sum\limits_{i = 1}^n \frac{\partial f}{\partial x_i}\mathrm{d}_{x_i}, \mathbb{R}^n \to \mathbb{R}^m$$
+   For vector functions: \\
+   $\bm{f} = (f_1, ..., f_m), \Omega \subset \mathbb{R}^n \to \mathbb{R}^m$
+   $$\mathrm{d}\bm{f}|_{\vec{t}} = (\mathrm{d}f_1|_{\vec{t}}, ...,\mathrm{d}f_m|_{\vec{t}})$$
+   \subsection{Chain Rule}
+   Given $\bm{f}: \Omega_1 \subset \mathbb{R}^n \to \mathbb{R}^m$ and $\bm{g}: \Omega_2 \subset \mathbb{R}^m \to \mathbb{R}^l$ such that: \\
+   $\bm{f}(\Omega_1) \subset \Omega_2$, and $\bm{f}$ is differentiable at $\vec{t} \in \Omega_1$ and $\bm{g}$ is differentiable at $\bm{f}(\vec{t})\in \Omega_2$, then
+   $$\mathrm{d}(\bm{g} \circ \bm{f})|_{\vec{t}} = (\mathrm{d}_{\bm{g}}|_{\bm{f}(\vec{t})}) \circ (\mathrm{d}\bm{f}|_{\vec{t}}): \mathbb{R}^n \to \mathbb{R}^l$$
+   $$[\mathrm{d}(\bm{f} \circ \bm{g})|_{\vec{t}}] = [\mathrm{d}_{\bm{g}}|_{\bm{f}(\vec{t})}] \cdot [\mathrm{d}\bm{f}|_{\vec{t}}]$$
+   \subsubsection{Notes}
+   Continuous and partially differentiable $\nRightarrow$ differentiable \\
+   \subsection{continuously differentiable functions}
+   A function $\bm{f}: \Omega \subset \mathbb{R}^n \to \mathbb{R}^m$, where $\Omega$ is open, is called \textit{continuously differentiable} at $\vec{x} \in \Omega$ iff. \\
+   $\bm{f}$ is partially differentiable at $\vec{x}$ and all of its partial Derivatives are continuous at $\vec{x}$. \\
+   If $\bm{f}$ is continuously differentiable at every point in $\Omega$, we say that $\bm{f}$ is a \textit{continuously differentiable function}, and adopt the notation $\bm{f} \in C^1(\Omega; \mathbb{R}^n)$
 \end{document}
