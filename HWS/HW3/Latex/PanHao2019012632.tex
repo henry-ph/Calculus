@@ -1,0 +1,64 @@
+%!TEX program = pdflatex
+\documentclass[11pt, a4paper]{article}
+\usepackage{amsfonts, setspace, mathptmx, bm, amsmath, color, amssymb, amsthm, mathrsfs}
+\renewcommand{\baselinestretch}{1.5}
+\begin{document}
+\title{Assignment 3}
+\author{Pan Hao, 2019012632}
+\date{}
+\maketitle
+
+\section*{Question 1}
+$$\begin{aligned}
+    \int_{0}^{1}\int_{y}^{1} y\sqrt{1-x^6}\mathrm{d}x\mathrm{d}y &= \int_{0}^{1}\int_{0}^{x}y\sqrt{1-x^6}\mathrm{d}y\mathrm{d}x \\
+    &= \int_{0}^{1}\frac{1}{2}x^2\sqrt{1-x^6}\mathrm{d}x \\
+    &= \frac{1}{6}\int_{0}^{1}\sqrt{1-x^6}\mathrm{d}(x^3) \\
+    &= \frac{1}{6}\int_{0}^{1}\sqrt{1-u^2}\mathrm{d}u
+\end{aligned}$$
+Substitute $u$ with $\sin v$, then $\mathrm{d}u = \cos v$, $\sqrt{1-u^2} = \cos v$
+$$\begin{aligned}
+    I = \int_{0}^{1}\sqrt{1-u^2}\mathrm{d}u &= \int_{0}^{\frac{\pi}{2}}\cos^2 v\mathrm{d}v \\
+    &= \cos v \sin v|_{0}^{\frac{\pi}{2}} + \int_{0}^{\frac{\pi}{2}} \sin^2 v\mathrm{d}v \\
+    &= \int_{0}^{\frac{\pi}{2}}\mathrm{d}v - I \\
+    \Rightarrow I &= \frac{1}{2}v|_{0}^{\frac{\pi}{2}} = \frac{\pi}{4} \\
+    \Rightarrow \int_{0}^{1}\int_{y}^{1} y\sqrt{1-x^6}\mathrm{d}x\mathrm{d}y &= \frac{1}{6}I = \frac{\pi}{24}
+\end{aligned}$$
+
+\section*{Question 2}
+$$\int_{1}^{\infty}(\int_{2}^{3}\frac{y}{x^3}\exp (\frac{y}{x^2}) \mathrm{d}y)\mathrm{d}x$$
+Consider $F(x) = \frac{3}{x^3}\exp(\frac{3}{x^2}), \forall y \in [2, 3], \frac{y}{x^3}\exp (\frac{y}{x^2}) \leq F(x)$ \\
+Since $\int_{1}^{\infty} F(x)\mathrm{d}x = -\frac{1}{2}\int_{1}^{\infty}\exp(\frac{3}{x^2})\mathrm{d}(\frac{3}{x^2})=-\frac{1}{2}(1-\mathrm{e}^3)$ is convergent, the original formula is uniformly convergent wrt $y \in [2, 3]$
+$$\begin{aligned}
+    \int_{1}^{\infty}(\int_{2}^{3}\frac{y}{x^3}\exp (\frac{y}{x^2}) \mathrm{d}y)\mathrm{d}x &= \int_{2}^{3}\int_{1}^{\infty}\frac{y}{x^3}\exp(\frac{y}{x^2})\mathrm{d}x\mathrm{d}y \\
+    &= \int_{2}^{3}\mathrm{d}y\int_{1}^{\infty}-\frac{1}{2}\exp(\frac{y}{x^2})\mathrm{d}(\frac{y}{x^2}) \\
+    &= \frac{1}{2}\int_{2}^{3}(\mathrm{e}^y-1) \mathrm{d}y \\
+    &=\frac{1}{2}(\mathrm{e}^3-\mathrm{e}^2 - 1)
+\end{aligned}$$
+
+\section*{Question 3}
+$$\int_{0}^{\infty}\frac{\cos x}{x}(\mathrm{e}^{-x} - \mathrm{e}^{-2x})\mathrm{d}x$$
+Since
+$$\lim\limits_{x \to 0}\frac{\cos x(\mathrm{e}^{-x} - \mathrm{e}^{-2x})}{x} = \lim\limits_{x \to 0}\cos x(2\mathrm{e}^{-2x}-\mathrm{e}^{-x}) = 0$$
+The integrand extends continuously to a well-defined function on $[0,1)$. \\
+Since
+$$\int \int \mathrm{e}^{-xy}\mathrm{d}y\mathrm{d}x = \int\frac{1}{x}\mathrm{e}^{-xy}\mathrm{d}x$$
+The integrand is equal to
+$$\int_{0}^{\infty}\int_{1}^{2}(\cos x)\mathrm{e}^{-xy}\mathrm{d}y\mathrm{d}x$$
+Consider $F(y) = \mathrm{e}^{-xy}, |(\cos x)\mathrm{e}^{-xy}| \leq F(y), \int_{0}^{\infty}F(y)\mathrm{d}y = \frac{1}{y}$ is convergent, the integrand is uniformly convergent wrt $y \in [1, 2]$
+$$\begin{aligned}
+    \int_{0}^{\infty}\frac{\cos x}{x}(\mathrm{e}^{-x} - \mathrm{e}^{-2x})\mathrm{d}x &= \int_{1}^{2}\int_{0}^{\infty}(\cos x)\mathrm{e}^{-xy}\mathrm{d}x\mathrm{d}y \\
+    I = \int_{0}^{\infty}(\cos x)\mathrm{e}^{-xy}\mathrm{d}x &= -\frac{1}{y}\int_{0}^{\infty}(\cos x)\mathrm{d}(\mathrm{e}^{-xy}) \\
+    &= -\frac{1}{y}(\int_{0}^{\infty}(\sin x)\mathrm{e}^{-xy}\mathrm{d}x - 1)\\
+    &=\frac{1}{y^2}I + \frac{1}{y}\\
+    \Rightarrow I &= \frac{y}{y^2+1} \\
+    \Rightarrow \int_{1}^{2}\frac{y}{y^2+1}\mathrm{d}y &= \frac{1}{2}\int_{1}^{2}\frac{1}{y^2+1}\mathrm{d}(y^2+1) \\
+    &= \frac{1}{2}(\ln 5 - \ln 2)
+\end{aligned}$$
+
+\section*{Question 4}
+$$\int_{1}^{\infty}(\int_{2}^{3}\frac{y}{x^3}\exp (\frac{y}{x^2}) \mathrm{d}y)\mathrm{d}x$$
+Consider $f(\cdot, y)=\frac{y}{x^3}, g(\cdot, y)=\exp(\frac{y}{x^2}),$
+$$\int_{1}^{\infty}f(x, y)\mathrm{d}x = \int_{1}^{\infty}\frac{y}{x^3}\mathrm{d}x \text{ is uniformly convergent wrt y since }3 > 1$$
+$$1 < g(x, y) \leq \mathrm{e}^y \text{ is bounded and monotonic wrt }x$$
+Therefore, the integrand is uniformly convergent wrt y according to Albel test.
+\end{document}
