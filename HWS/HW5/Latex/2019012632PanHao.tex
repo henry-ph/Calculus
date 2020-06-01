@@ -1,0 +1,128 @@
+%!TEX program = pdflatex
+\documentclass[11pt, a4paper]{article}
+\usepackage{amsfonts, setspace, mathptmx, bm, amsmath, color, amssymb, amsthm, mathrsfs, txfonts}
+\renewcommand{\baselinestretch}{1.5}
+\begin{document}
+\title{Assignment 5}
+\author{Pan Hao}
+\date{}
+\maketitle
+
+\section*{Question 1}
+\paragraph{i.}
+$$\sum\limits_{n = 1}^\infty 3^{-2n + \frac{1}{n}}$$ is converged. \\
+\textbf{Proof:}
+$$\begin{aligned}
+    \lim\limits_{n \to \infty} (3^{-2n + \frac{1}{n}})^\frac{1}{n} &= \lim\limits_{n \to \infty} 3^{-2 + \frac{1}{n^2}} \\
+    &= \frac{1}{9} < 1
+\end{aligned}$$
+According to the root test, $\sum\limits_{n = 1}^\infty 3^{-2n + \frac{1}{n}}$ is converged.
+
+\paragraph{ii.}
+$$\sum\limits_{n = 2020}^\infty \sin(\pi(n^2 - n + \frac{2}{n}))$$
+is diverged. \\
+\textbf{Proof:}
+$$\begin{aligned}
+    \sin(\pi(n^2 - n + \frac{2}{n})) &= \sin(n(n - 1)\pi + \frac{2}{n}\pi) \\
+    &= \sin(\frac{2\pi}{n}) \\
+    \lim\limits_{n \to \infty} \frac{\sin(\frac{2\pi}{n})}{\frac{1}{n}} &= \lim\limits_{n \to \infty}\frac{\frac{2\pi}{n} + o(\frac{1}{n})}{\frac{1}{n}} \\
+    &= 2\pi + o(1)
+\end{aligned}$$
+Since $\sum\limits_{n=2020}^\infty \frac{1}{n}$ is diverged, $\sum\limits_{n = 2020}^\infty \sin(\pi(n^2 - n + \frac{2}{n}))$ is diverged as well.
+
+\paragraph{iii.}
+$$\sum\limits_{n=2020}^\infty \frac{\tanh(n)}{n - \cos(n)}$$
+is diverged. \\
+\textbf{Proof:}
+$$\begin{aligned}
+    \lim\limits_{n \to \infty} \frac{\frac{\tanh(n)}{n - \cos(n)}}{\frac{1}{n}} &= \lim\limits_{n \to \infty} \frac{\tanh(n)}{1 - \frac{\cos(n)}{n}} \\
+    &= 1
+\end{aligned}$$
+Since $\sum\limits_{n=2020}^\infty \frac{1}{n}$ is diverged, $\sum\limits_{n=2020}^\infty \frac{\tanh(n)}{n - \cos(n)}$ is diverged as well.
+
+\paragraph{iv.}
+$$\sum\limits_{n = 1}^\infty (1 - \frac{1}{n})^{n^2}$$
+is converged. \\
+\textbf{Proof:}
+$$\begin{aligned}
+    ((1 - \frac{1}{n})^{n^2})^{\frac{1}{n}} &= (1 - \frac{1}{n})^n \\
+    \lim\limits_{n \to \infty} (1 - \frac{1}{n})^n &= \lim\limits_{n \to \infty} ((1 + (-\frac{1}{n}))^{-n})^{-1} \\
+    &= \frac{1}{\mathrm{e}} < 1
+\end{aligned}$$
+According to the root test, $\sum\limits_{n = 1}^\infty (1 - \frac{1}{n})^{n^2}$ is converged.
+
+\paragraph{v.}
+$$\sum\limits_{n=0}^\infty \frac{n!}{n^n}$$
+is converged. \\
+\textbf{Proof:}
+$$\begin{aligned}
+    \frac{\frac{(n + 1)!}{(n+1)^{n+1}}}{\frac{n!}{n^n}} &= \frac{(n + 1)n^n}{(n+1)^{n+1}} \\
+    &= (\frac{n}{n+1})^n < 1
+\end{aligned}$$
+According to the ratio test, $\sum\limits_{n=0}^\infty \frac{n!}{n^n}$ is converged.
+
+\paragraph{vi.} 
+$$\sum\limits_{n=1}^\infty \frac{n\cos(n)}{n^2+1}$$
+is converged. \\
+\textbf{Proof:} First consider $\sum\limits_{n=1}^\infty \cos(n)$:
+$$\begin{aligned}
+    2\cos(1)\sin(\frac{1}{2}) &= \sin(\frac{3}{2}) - \sin(\frac{1}{2}) \\
+    2\cos(2)\sin(\frac{1}{2}) &= \sin(\frac{5}{2}) - \sin(\frac{3}{2}) \\
+    &\cdots \\
+    2\cos(n)\sin(\frac{1}{2}) &= \sin(n + \frac{1}{2}) - \sin(n - \frac{1}{2}) \\
+    \Rightarrow \sum\limits_{n=1}^\infty \cos(n) &= \frac{\sin(n+\frac{1}{2}) - \sin(\frac{1}{2})}{2\sin(\frac{1}{2})} \\
+    &< \frac{1 + 1}{2\sin(\frac{1}{2})} = \csc(\frac{1}{2})
+\end{aligned}$$
+Thus $\sum\limits_{n=1}^\infty \cos(n)$ is bounded. Then consider sequence $\{\frac{n}{n^2+1}\} (n \geq 1)$ which is monotonic.
+$$\begin{aligned}
+    \lim\limits_{n \to \infty} \frac{n}{n^2+1} &= \lim\limits_{n \to \infty} \frac{1}{n + \frac{1}{n}} \\
+    &= 0
+\end{aligned}$$
+Thus $\{\frac{n}{n^2+1}\} (n \geq 1)$ monotonically goes to zero. Therefore, according to Dirichlet test, $\sum\limits_{n=1}^\infty \frac{n\cos(n)}{n^2+1}$ is converged.
+
+\paragraph{vii.}
+$$\sum\limits_{n=2020}^\infty \frac{\log(\log(n))}{n(\log(n))^2}$$
+is converged. \\
+\textbf{Proof:} Since $\frac{\log(\log(n))}{n(\log(n))^2}$ is positive and monotonically decreasing, according to the integral comparison test, $\sum\limits_{n=2020}^\infty \frac{\log(\log(n))}{n(\log(n))^2}$ agrees in convergent/divergent with $\int\limits_{n=2020}^\infty \frac{\log(\log(n))}{n(\log(n))^2} \mathrm{d}n$.
+$$\begin{aligned}
+    \int\limits_{n=2020}^\infty \frac{\log(\log(n))}{n(\log(n))^2} \mathrm{d}n &= \int\limits_{n=2020}^\infty \frac{\log(\log(n))}{(\log(n))^2} \mathrm{d}(\log(n)) \\
+    &= \int\limits_{u=\log(2020)}^\infty \frac{\log(u)}{u^2}\mathrm{d}u \\
+    &= \int\limits_{u=\log(2020)}^\infty \frac{\log(u)}{u^{\frac{1}{2}}} \cdot \frac{1}{u^{\frac{3}{2}}}\mathrm{d}u
+\end{aligned}$$
+First consider $\frac{\log(u)}{u^{\frac{1}{2}}}$:
+$$\begin{aligned}
+    \frac{\mathrm{d}}{\mathrm{d}u} \frac{\log(u)}{u^{\frac{1}{2}}} &= \frac{u^{-\frac{1}{2}} - \frac{1}{2}\log(u)u^{-\frac{1}{2}}}{u} \\
+    &= (1 - \frac{1}{2}\log(u))u^{-\frac{3}{2}} < 0 \\
+    \lim\limits_{n \to \infty} \frac{\log(u)}{u^{\frac{1}{2}}} &= \lim\limits_{n \to \infty} \frac{\frac{1}{u}}{\frac{1}{2}u^{-\frac{1}{2}}} = 0
+\end{aligned}$$
+Thus $\frac{\log(u)}{u^{\frac{1}{2}}}$ monotonically bounded. Since $\int\limits_{u=\log(2020)}^\infty \frac{1}{u^{\frac{3}{2}}}\mathrm{d}u$ converges, according to the Abel test, $\int\limits_{n=2020}^\infty \frac{\log(\log(n))}{n(\log(n))^2} \mathrm{d}n$ is converged. Therefore, $\sum\limits_{n=2020}^\infty \frac{\log(\log(n))}{n(\log(n))^2}$ is converged as well.
+
+
+\section*{Question 2}
+
+\paragraph{i.}
+$$\sum\limits_{n=2}^\infty \frac{n^x}{(\log(n))^n}$$
+Consider the ratio test:
+$$\begin{aligned}
+    \frac{\frac{(n+1)^x}{(\log(n+1))^{n+1}}}{\frac{n^x}{(\log(n))^n}} &= (\frac{n+1}{n})^x \cdot \frac{(\log(n))^n}{(\log(n+1))^{n+1}} \\
+    \frac{(\log(n))^n}{(\log(n+1))^{n+1}} &= \exp(n\log(\log(n)) - (n+1)\log(\log(n+1))) \\
+    &= \exp(n\log\frac{\log(n)}{\log(n+1)} - \log(\log(n+1))) \\
+    \text{Since } \log(n) < \log(n+1) &\text{, } \frac{\log(n)}{\log(n+1)} < 0\\
+    \lim\limits_{n \to \infty} n\log\frac{\log(n)}{\log(n+1)} - \log(\log(n+1)) &= -\infty \\
+    \lim\limits_{n \to \infty} \exp(n\log\frac{\log(n)}{\log(n+1)} - \log(\log(n+1))) &= 0
+\end{aligned}$$
+Since $(\frac{n+1}{n})^x$ goes to $1$ when $n$ goes to $\infty$, $(\frac{n+1}{n})^x \cdot \frac{(\log(n))^n}{(\log(n+1))^{n+1}}$ goes to $0$. Therefore, $\sum\limits_{n=2}^\infty \frac{n^x}{(\log(n))^n}$ is converged for all $x \in \mathbb{R}$.
+
+\paragraph{ii.}
+$$\sum\limits_{n=1}^\infty x^{-1 - \frac{1}{2} - \cdots - \frac{1}{n}}$$
+According to the logarithmic test:
+$$\begin{aligned}
+    \log(\frac{1}{a_n}) &= \log(x^{1 + \frac{1}{2} + \cdots + \frac{1}{n}}) \\
+    &= (1 + \frac{1}{2} + \cdots + \frac{1}{n})\log(x) \\
+    &= (\log(n) + \gamma)\log(x) \\
+    L_n &= \frac{\log(\frac{1}{a_n})}{\log(n)} \\
+    &= \frac{(\log(n) + \gamma)\log(x)}{\log(n)} \\
+    &= \log(x) + \frac{\gamma}{\log(n)}\log(x) > \log(x)
+\end{aligned}$$ 
+Therefore, if $\sum\limits_{n=1}^\infty x^{-1 - \frac{1}{2} - \cdots - \frac{1}{n}}$ converges, $\log(x) \geq 1$. Thus the domain of convergence is $x > \mathrm{e}$.
+\end{document}

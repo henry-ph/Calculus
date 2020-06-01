@@ -1,0 +1,247 @@
+%!TEX program = pdflatex
+\documentclass[11pt, a4paper]{article}
+\usepackage{amsfonts, setspace, mathptmx, bm, amsmath, color, amssymb, amsthm, mathrsfs, txfonts}
+\renewcommand{\baselinestretch}{1.5}
+\begin{document}
+\title{Assignment 4}
+\author{Pan Hao}
+\date{}
+\maketitle
+
+\section*{Question 1}
+\paragraph{i.}
+$$\bm{F}: \mathbb{R}^2 \to \mathbb{R}^2, \bm{F}(x, y) = [x^2 - y ^2 - 2x + 1, -2xy + 2y]^T$$
+\textbf{Proof:}
+$$\begin{aligned}
+    \int (x^2-y^2-2x+1) \mathrm{d}x &= \frac{1}{3}x^3-xy^2-x^2+x+C(y) \\
+    \int (-2xy + 2y) \mathrm{d}y &= -xy^2 + y^2 + C(x) \\
+    \Rightarrow \bm{F} &= \nabla \cdot (\frac{1}{3}x^3 - xy^2 -x^2 + x + y^2)
+\end{aligned}$$
+This function does display
+path-independence.
+
+\paragraph{ii.}
+$$\bm{G}: \mathbb{R}^2 \to \mathbb{R}^2, \bm{G}(x, y) = [x^3-y^3-2x^2, -3xy^2+3y^2]^T$$
+\textbf{Proof:}
+$$\begin{aligned}
+    \int (x^3-y^3-2x^2, -3xy^2+3y^2)\mathrm{d}x &= \frac{1}{4}x^4-xy^3 -\frac{2}{3}x^3 +C(y) \\
+    \int (-3xy^2+3y^2) \mathrm{d}y &= -xy^3 + y^3 + C(x) \\
+    \Rightarrow \bm{G} &= \nabla \cdot (\frac{1}{4}x^4-xy^3-\frac{2}{3}x^3+y^3)
+\end{aligned}$$
+This function does display
+path-independence.
+
+\paragraph{iii.}
+$$\bm{H}: \{[0, 0]^T\} \to \mathbb{R}^2, \bm{H}(x, y) = [x^3-y^3-2x^2, -3xy^2+3y^2]$$
+\textbf{Proof:} \\
+Consider an arbitrary line $L$ from $\vec{u}$ to $\vec{v}$. \textbf{Firstly}, if $L$ doesn't go through $[0, 0]^T$, then obviously $\int_L \bm{H} \cdot \mathrm{d}\vec{l} = 0$. \textbf{Secondly}, if $L$ does go through $[0, 0]^T$, then we can observe that $\bm{H}(0, 0) = \vec{0}$, then $\int_L \bm{H} \cdot \mathrm{d}\vec{l} = 0$. Therefore, the function does display path-independence.
+
+\paragraph{iv.}
+$$\bm{I}: \mathbb{R}^3 \to \mathbb{R}^3, \bm{I}(x, y, z) = [\sin(x+\mathrm{e}^x), \cos(\cos(y)), z + z^7]^T$$
+\textbf{Proof:}
+$$\begin{aligned}
+    \int (\sin(x+\mathrm{e}^x))\mathrm{d}x &= A(x)+C(y,z) \\
+    \int (\cos(\cos(y)))\mathrm{d}y &= B(y)+C(x, z) \\
+    \int (z + z^7)\mathrm{d}z &= D(z)+C(x, y) \\
+    \Rightarrow \bm{I} &= \nabla \cdot (A(x)+B(y)+D(z)+C)
+\end{aligned}$$
+This function does display
+path-independence.
+
+\paragraph{v.}
+$$\bm{J}: \mathbb{R}^3 \to \mathbb{R}^3, \bm{J}(x, y, z) = [\mathrm{e}^{xy}, \mathrm{e}{x-y}, x+y]^T$$
+\textbf{Proof:}
+$$\begin{aligned}
+    \int (\mathrm{e}^{xy})\mathrm{d}x &= \frac{1}{y}\mathrm{e}^{xy} +C(y, z) \\
+    \int (\mathrm{e}^{x-y})\mathrm{d}y &= -\mathrm{e}^{x-y}+C(x, z) \\
+    \int (x+y)\mathrm{d}z &= z(x+y)+C(x, y)
+\end{aligned}$$
+Therefore, $\bm{J}$ is not the tangent field for any function in $\mathbb{R}^3$. This function doesn't display
+path-independence.
+
+\paragraph{vi.}
+$$\bm{K}: \mathbb{Z}^3 \to \mathbb{R}^3, \bm{K}(x, y, z) = [y, z, x+y+z]^T$$
+\textbf{Proof:} \\
+Consider an arbitrary line $L$ from $[0.5, 0.5, 0.5]^T$ to $[3.5, 3.5, 3.5]^T$. If $L$ doesn't go through any point in $\mathbb{Z}^3$, then $\int_L \bm{K} \cdot \mathrm{d}\vec{l} = 0$. Otherwise, if $L$ goes through point $[1, 1, 1]^T$, then we can observe $\bm{K}(1, 1, 1) = [1, 1, 3]^T$. Once if $\bm{K}(1, 1, 1) \cdot \mathrm{d}\vec{l} \neq 0, \int_L \bm{K} \cdot \mathrm{d}\vec{l} \neq 0$. Therefore, the function doesn't display path-independence.
+\paragraph{vii.}
+$$\bm{L}:\{[0,0,z]^T \in \mathbb{R}^3\} \to \mathbb{R}^3, \bm{L}(x, y, z) = [x+y+z, x^2+y^2-z^2, x^3+2y^3+3z^3]$$
+\textbf{Proof:} \\
+Consider an arbitrary line $L$ from $[-1, -1, -1]^T$ to $[1, 1, 1]^T$. If $L$ doesn't go through z-axis, $\int_L \bm{K} \cdot \mathrm{d}\vec{l} = 0$. Otherwise, if $L$ go through any point $\vec{u}$ on z-axis except the origin, $\bm{K}(\vec{u}) \neq 0$. Once if $\bm{K}(\vec{u})\cdot \mathrm{d}\vec{l} \neq 0, \int_L\bm{K} \cdot \mathrm{d}\vec{l} \neq 0$. Therefore, this function doesn't display path-independence.
+
+
+\section*{Question 2}
+$$\begin{aligned}
+    \mathrm{D} &:= \{[x, y]^T \in \mathbb{R}^2 | x^2+y^2 \leq 1, y \geq 0\} \\
+    \bm{F}(x, y, z) &= [y^2, x^2, z^2]^T
+\end{aligned}$$
+
+\paragraph{i.}
+$$\begin{aligned}
+    \int_{\partial S_1} \bm{F} \cdot \mathrm{d}\vec{A} &= \int_{\partial S_1}
+    \begin{bmatrix}
+        y^2 \\
+        x^2 \\
+        z^2
+    \end{bmatrix} \cdot
+    \begin{bmatrix}
+        0 \\
+        -1 \\
+        0
+    \end{bmatrix} \mathrm{d}A \\
+    &= \int_{-1}^{1} \int_{-1}^{1}-x^2 \mathrm{d}x \mathrm{d}z\\
+    &= \int_{-1}^{1} -\frac{2}{3}\mathrm{d}z \\
+    &=-\frac{4}{3} \\
+    \int_{\partial S_2} \bm{F} \cdot \mathrm{d}\vec{A} &= \int_{\partial S_2}
+    \begin{bmatrix}
+        y^2 \\
+        x^2 \\
+        z^2
+    \end{bmatrix} \cdot
+    \begin{bmatrix}
+        0 \\
+        0 \\
+        \pm 1
+    \end{bmatrix} \mathrm{d}A \\
+    &= \int z^2 \mathrm{d}A - \int z^2 \mathrm{d}A \\
+    &= 0 \\
+    \partial S_3 &=
+    \begin{bmatrix}
+        \cos \theta \\
+        \sin \theta \\
+        t
+    \end{bmatrix} (\theta \in [0, \pi], t \in [-1, 1])\\
+    \partial_{\theta}S \times \partial_{t}S &= 
+    \begin{bmatrix}
+        -\sin \theta \\
+        \cos \theta \\
+        0
+    \end{bmatrix} \times
+    \begin{bmatrix}
+        0 \\
+        0 \\
+        1
+    \end{bmatrix} \\
+    &= \begin{bmatrix}
+        \cos \theta \\
+        \sin \theta \\
+        0
+    \end{bmatrix} \\
+    \int_{\partial S_3} \bm{F} \cdot \mathrm{d}\vec{A} &= \int_{\partial S_3}
+    \begin{bmatrix}
+        y^2 \\
+        x^2 \\
+        z^2
+    \end{bmatrix} \cdot
+    \begin{bmatrix}
+        \cos \theta \\
+        \sin \theta \\
+        0
+    \end{bmatrix} \mathrm{d}A \\
+    &= \int_{-1}^{1}\int_{0}^{\pi}(\cos^3 \theta + \sin^3 \theta) \mathrm{d}\theta \mathrm{d}t \\
+    &= \int_{-1}^{1}\frac{2}{3}\mathrm{d}t \\
+    &= \frac{4}{3} \\
+    \Rightarrow \int_{\partial \Omega} \bm{F}\mathrm{d}\vec{A} &= -\frac{4}{3} + 0 + \frac{4}{3} = 0
+\end{aligned}$$
+
+\paragraph{ii.}
+$$\begin{aligned}
+    \int_{\partial \Omega} \bm{F}\mathrm{d}\vec{A} &= \int_{\partial \Omega} \nabla \cdot \bm{F} \mathrm{d}A \\
+    &= \int_{-1}^{1}\int_{0}^{\sqrt{1-x^2}}\int_{-1}^{1} (2z) \mathrm{d}x\mathrm{d}y\mathrm{d}z \\
+    &= z^2 |_{-1}^{1} \\
+    &= 0
+\end{aligned}$$
+
+\paragraph{iii.}
+\textbf{Proof:}
+$$\begin{aligned}
+    \nabla \cdot \bm{F}(x,y,z) &= \nabla \cdot [y^2, x^2, z^2]^T \\
+    &= 2z \\
+    z &\in [-1, 1]
+\end{aligned}$$
+Therefore, $\nabla \cdot \bm{F}$ is not identically equal to $0$, which means that the vector field $\bm{F}$ is not solenoidal. There cannot exist a function $\bm{G}: A \to \mathbb{R}^3$ for any simply-connected open set $A \subset \mathbb{R}^3$ such that $\nabla \times \bm{G} = \bm{F}$.
+
+\section*{Question 3}
+$$\text{Intersection of surfaces }x^2+y^2=1, z=y^2-x^2$$
+$$\bm{F}=[y^2,2xy,xy]^T$$
+
+\paragraph{i.}
+$$\begin{aligned}
+    x &= \cos\theta \\
+    y &= \sin\theta \\
+    z &= y^2 - x^2 = -\cos2\theta \\
+    \mathrm{d}\vec{l} &= l'\mathrm{d}\theta =
+    \begin{bmatrix}
+        -\sin\theta \\
+        \cos\theta \\
+        2\sin2\theta
+    \end{bmatrix} \mathrm{d}\theta (0 \leq \theta \leq 2\pi)\\
+    \oint_\Gamma \bm{F} \cdot \mathrm{d}\vec{l} &= \int_{0}^{2\pi}
+    \begin{bmatrix}
+        \sin^2\theta \\
+        2\sin\theta\cos\theta \\
+        \sin\theta\cos\theta
+    \end{bmatrix} \cdot
+    \begin{bmatrix}
+        -\sin\theta \\
+        \cos\theta \\
+        2\sin2\theta
+    \end{bmatrix} \mathrm{d}\theta \\
+    &= \int_{0}^{2\pi}(-\sin^3\theta+2\sin\theta\cos^2\theta+4\sin^2\theta\cos^2\theta)\mathrm{d}\theta \\
+    &= \int_{0}^{2\pi}\sin^22\theta\mathrm{d}\theta \\
+    &= \frac{1}{2}\int_{0}^{2\pi} (1 - \cos4\theta)\mathrm{d}\theta \\
+    &= \frac{1}{2}\int_{0}^{2\pi}\mathrm{d}\theta = \pi
+\end{aligned}$$
+\paragraph{ii.}
+$$\begin{aligned}
+    \oint_\Gamma \bm{F} \cdot \mathrm{d}\vec{l} &= \int\int_S \nabla \times \bm{F} \cdot \mathrm{d}\vec{A} \\
+    &= \int\int_S
+    \begin{bmatrix}
+        x \\
+        -y \\
+        0
+    \end{bmatrix} \cdot \mathrm{d}\vec{A} \\
+    S &= 
+    \begin{bmatrix}
+        r\cos \theta \\
+        r\sin \theta \\
+        r^2\sin^2\theta - r^2\cos^2\theta
+    \end{bmatrix} (0 \leq r \leq 1, 0 \leq \theta \leq 2\pi) \\
+    \partial_rS \times \partial_\theta S &=
+    \begin{bmatrix}
+        \cos \theta \\
+        \sin \theta \\
+        -2r\cos2\theta\
+    \end{bmatrix} \times
+    \begin{bmatrix}
+        -r\sin\theta \\
+        r\cos\theta \\
+        2r^2 \sin2\theta
+    \end{bmatrix} \\
+    &=
+    \begin{bmatrix}
+        2r^2\sin\theta+2r^2\cos\theta\cos2\theta \\
+        2r^2\sin\theta\cos2\theta-2r^2\cos\theta\sin2\theta \\
+        r\cos^2\theta+r\sin^2\theta
+    \end{bmatrix} \\
+    \int\int_S
+    \begin{bmatrix}
+        x \\
+        -y \\
+        0
+    \end{bmatrix} \cdot \mathrm{d}\vec{A} &= \int\int_S
+    \begin{bmatrix}
+        r\cos\theta \\
+        -r\sin\theta \\
+        0
+    \end{bmatrix} \cdot
+    \begin{bmatrix}
+        2r^2\sin\theta+2r^2\cos\theta\cos2\theta \\
+        2r^2\sin\theta\cos2\theta-2r^2\cos\theta\sin2\theta \\
+        r\cos^2\theta+r\sin^2\theta
+    \end{bmatrix} \mathrm{d}A \\
+    &= \int_0^{2\pi}\int_0^1 (r^3\sin^22\theta+2r^3\cos^2\theta+\\&r^3\sin^22\theta-2r^3\sin^2\theta\cos2\theta)\mathrm{d}r\mathrm{d}\theta \\
+    &= \int_0^{2\pi}\int_0^1(2r^3)\mathrm{d}r\mathrm{d}\theta \\
+    &=\int_0^{2\pi}\frac{1}{2}\mathrm{d}\theta = \pi
+\end{aligned}$$
+
+\end{document}
